@@ -7,11 +7,11 @@
 
 class Semaphore {
  private:
-   bool isOpen_;
+	bool isOpen_;
 
  public:
-	 Semaphore();
-	 ~Semaphore();
-   bool isOpen;
+	Semaphore();
+	~Semaphore();
+	bool isOpen;
 };
 #endif

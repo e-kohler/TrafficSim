@@ -8,18 +8,18 @@
 
 class Road {
  private:
-   Semaphore& semaphore_;
-	 std::size_t size_;
-	 int speed_;
-	 LinkedQueue<Vehicle> queue_;
+	Semaphore& semaphore_;
+	std::size_t size_;
+	int speed_;
+	LinkedQueue<Vehicle> queue_;
 
  public:
-	 Road(Semaphore& semaphore, std::size_t size, int speed);
-	 ~Road();
-	 std::size_t getSize();
-	 int getSpeed();
-	 Vehicle pop();
-	 void add(Vehicle vehicle);
-   bool empty();
+	Road(Semaphore& semaphore, std::size_t size, int speed);
+	~Road();
+	std::size_t getSize();
+	int getSpeed();
+	Vehicle pop();
+	void add(Vehicle vehicle);
+	bool empty();
 };
 #endif
