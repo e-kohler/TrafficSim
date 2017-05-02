@@ -4,16 +4,22 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../event.cpp \
+../main.cpp \
 ../road.cpp \
 ../semaphore.cpp \
 ../vehicle.cpp 
 
 OBJS += \
+./event.o \
+./main.o \
 ./road.o \
 ./semaphore.o \
 ./vehicle.o 
 
 CPP_DEPS += \
+./event.d \
+./main.d \
 ./road.d \
 ./semaphore.d \
 ./vehicle.d 

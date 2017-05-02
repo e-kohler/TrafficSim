@@ -1,4 +1,5 @@
 //  Copyright [2017] Eduardo Kohler & Lucas Suppes
+
 #ifndef ROAD_H
 #define ROAD_H
 
@@ -8,8 +9,8 @@
 #include "structures/linked_queue.h"
 
 class Road {
- private:
-	Semaphore& semaphore_ = NULL;
+ protected:
+	Semaphore& semaphore_;
 	std::size_t size_;
 	int speed_;
 	double probEast_, probWest_;
@@ -20,8 +21,29 @@ class Road {
 	~Road();
 	std::size_t getSize();
 	int getSpeed();
-	Vehicle pop();
-	void add(Vehicle vehicle);
-	bool empty();
+	bool isEmpty();
 };
-#endif
+
+class wayIn : Road {
+ private:
+	int freq_;
+
+ public:
+	wayIn(int freq);
+	~wayIn();
+	void add(const Vehicle& vehicle);
+};
+
+class wayOut : Road {
+ public:
+	wayOut();
+	~wayOut();
+	bool isFull();
+	void remove();
+};
+
+
+
+
+
+

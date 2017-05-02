@@ -22,17 +22,32 @@ int Road:: getSpeed() {
 	return speed_;
 }
 
-Vehicle Road::pop() {
-	Vehicle popped = queue_.dequeue();
-	size_ += popped.getSize();  // Aumenta o tamanho restante da pista.
-	return popped;
-}
-
-void Road::add(Vehicle vehicle) {
-	queue_.enqueue(vehicle);
-	size_ -= vehicle.getSize();  // Diminui o tamanho restante da pista.
-}
-
-bool Road::empty() {
+bool Road::isEmpty() {
 	return queue_.empty();
 }
+
+wayIn::wayIn(int freq) {
+	freq_ = freq;
+}
+
+wayIn::~wayIn() {}
+
+void wayIn::add(const Vehicle& vehicle) {
+	queue_.enqueue(vehicle);
+	size_ -= vehicle.getSize();  // Diminui o tamanho restante.
+}
+
+wayOut::wayOut() {}  // To do
+
+bool wayOut::isFull() {
+	return size_ == 0;  // hmmm
+}
+
+void wayOut::remove() {
+	queue_.dequeue();
+	size_ += queue_.front().getSize();  // Aumenta o tamanho restante da pista.
+}
+
+
+
+
