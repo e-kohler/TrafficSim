@@ -3,6 +3,12 @@
 #include <stdlib.h>
 #include <semaphore.h>
 
-Semaphore::isOpen() {
+Semaphore::Semaphore() {
+	isOpen_ = false;
+}
+
+Semaphore::~Semaphore() {}
+
+bool Semaphore::isOpen() {
 	return isOpen_;
 }

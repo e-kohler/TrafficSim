@@ -12,6 +12,6 @@ class Semaphore {
  public:
 	Semaphore();
 	~Semaphore();
-	bool isOpen;
+	bool isOpen();
 };
 #endif

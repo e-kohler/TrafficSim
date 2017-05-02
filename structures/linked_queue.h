@@ -34,7 +34,7 @@ class LinkedQueue {
  private:
   class Node {
    public:
-    explicit Node(const T& data) : data_{data} {}
+    explicit Node(const T& data) : data_{data}, next_{nullptr} {}
     Node(const T& data, Node* next) : data_{data}, next_{next} {}
 
     T& data() { return data_; }

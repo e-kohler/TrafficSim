@@ -1,15 +1,15 @@
 //  Copyright [2017] Eduardo Kohler & Lucas Suppes
-#ifndef Road_H
-#define Road_H
 
+#include "road.h"
 #include <cstdint>
 #include <stdlib.h>
-#include <road.h>
 
-Road::Road(Semaphore& semaphore, std::size_t size, int speed) {
+Road::Road(Semaphore& semaphore, std::size_t size, int speed, double probWest, double probEast) {
 	semaphore_ = semaphore;
 	size_ = size;
 	speed_ = speed;
+	probWest_ = probWest;
+	probEast_ = probEast;
 }
 
 Road::~Road() {}
@@ -36,6 +36,3 @@ void Road::add(Vehicle vehicle) {
 bool Road::empty() {
 	return queue_.empty();
 }
-
-
-
