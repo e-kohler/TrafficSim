@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/TrafficSim.dir/event.cpp.o CMakeFiles/TrafficSim.dir/main.cpp.o CMakeFiles/TrafficSim.dir/road.cpp.o CMakeFiles/TrafficSim.dir/semaphore.cpp.o CMakeFiles/TrafficSim.dir/vehicle.cpp.o  -o TrafficSim 

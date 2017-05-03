@@ -6,6 +6,7 @@
 #include <iostream>
 #include <cstdint>
 #include <stdlib.h>
+#include "vehicle.h"
 #include "structures/linked_list.h"
 #include "structures/linked_queue.h"
 

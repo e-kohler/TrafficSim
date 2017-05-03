@@ -13,9 +13,10 @@
  */
 class Event {
  protected:
-	int t_;  // Event time
+	int t_ = 0;  // Event time
 
  public:
+	Event();
 	Event(int t);
 	~Event();
 	void event();  // Method that performs the actual event.
@@ -25,7 +26,7 @@ class Event {
  */
 class newVehicle : Event {
  private:
-	Road& road_;
+	Road road_;
 
  public:
 	newVehicle(int t, Road& road);
@@ -37,7 +38,7 @@ class newVehicle : Event {
  */
 class changeSem : Event {
  private:
-	Semaphore& semaphore_;
+	Semaphore semaphore_;
 
  public:
 	changeSem(int t, Semaphore& semaphore);
@@ -49,8 +50,8 @@ class changeSem : Event {
  */
 class vehInSem : Event {
  private:
-	Semaphore& semaphore_;
-	Vehicle& vehicle_;
+	Semaphore semaphore_;
+	Vehicle vehicle_;
 
  public:
 	vehInSem(int t, Semaphore& semaphore, Vehicle& vehicle);
@@ -62,8 +63,8 @@ class vehInSem : Event {
  */
 class changeRoad : Event {
  private:
-	Road& road_;
-	Vehicle& vehicle_;
+	Road road_;
+	Vehicle vehicle_;
  public:
 	changeRoad(int t, Road& road, Vehicle& vehicle);
 	~changeRoad();

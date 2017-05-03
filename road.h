@@ -10,14 +10,14 @@
 
 class Road {
  protected:
-	Semaphore& semaphore_;
-	std::size_t size_;
+	std::size_t used_, size_;
 	int speed_;
 	double probEast_, probWest_;
 	structures::LinkedQueue<Vehicle> queue_;
 
  public:
-	Road(Semaphore& semaphore, std::size_t size, int speed, double probWest, double probEast);
+	Road();
+	Road(std::size_t size, int speed, double probWest, double probEast);
 	~Road();
 	std::size_t getSize();
 	int getSpeed();
@@ -38,7 +38,6 @@ class wayOut : Road {
  public:
 	wayOut();
 	~wayOut();
-	bool isFull();
 	void remove();
 };
 

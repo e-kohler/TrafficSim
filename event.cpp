@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include "event.h"
 
+Event::Event() {
+    t_ = 0;
+}
+
 Event::Event(int t) {
 	t_ = t;
 }
@@ -44,8 +48,8 @@ void vehInSem::event() {
 
 changeRoad::changeRoad(int t, Road& road, Vehicle& vehicle) {
 	t_ = t;
-	road_ = road;
-	vehicle_ = vehicle;
+    road_ = road;
+    vehicle_ = vehicle;
 }
 
 changeRoad::~changeRoad() {}

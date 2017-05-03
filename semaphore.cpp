@@ -2,7 +2,7 @@
 
 #include <cstdint>
 #include <stdlib.h>
-#include <semaphore.h>
+#include "semaphore.h"
 
 Semaphore::Semaphore() {
 	isOpen_ = false;

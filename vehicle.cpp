@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <stdlib.h>
 #include <ctime>
+#include "vehicle.h"
 
 Vehicle::Vehicle() {
 	srand(time(NULL));

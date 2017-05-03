@@ -4,8 +4,8 @@
 #include <cstdint>
 #include <stdlib.h>
 
-Road::Road(Semaphore& semaphore, std::size_t size, int speed, double probWest, double probEast) {
-	semaphore_ = semaphore;
+Road::Road(std::size_t size, int speed, double probWest, double probEast) {
+	used_ = 0;
 	size_ = size;
 	speed_ = speed;
 	probWest_ = probWest;
@@ -33,19 +33,18 @@ wayIn::wayIn(int freq) {
 wayIn::~wayIn() {}
 
 void wayIn::add(const Vehicle& vehicle) {
+	if(used_ + vehicle.getSize() > size_) {
+		throw std::out_of_range("Road is full");  //
+	}
 	queue_.enqueue(vehicle);
-	size_ -= vehicle.getSize();  // Diminui o tamanho restante.
+	used_ += vehicle.getSize();  // Diminui o tamanho restante.
 }
 
 wayOut::wayOut() {}  // To do
 
-bool wayOut::isFull() {
-	return size_ == 0;  // hmmm
-}
-
 void wayOut::remove() {
 	queue_.dequeue();
-	size_ += queue_.front().getSize();  // Aumenta o tamanho restante da pista.
+	used_ -= queue_.front().getSize();
 }
 
 
