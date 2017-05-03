@@ -13,14 +13,14 @@ set(SOURCE_FILES
         structures/linked_list.h
         structures/linked_queue.h
         structures/linked_stack.h
-        event.cpp
-        event.h
-        main.cpp
-        road.cpp
-        road.h
-        semaphore.cpp
-        semaphore.h
-        vehicle.cpp
-        vehicle.h)
+        TrafficSim/event.cpp
+        TrafficSim/event.h
+        TrafficSim/main.cpp
+        TrafficSim/road.cpp
+        TrafficSim/road.h
+        TrafficSim/semaphore.cpp
+        TrafficSim/semaphore.h
+        TrafficSim/vehicle.cpp
+        TrafficSim/vehicle.h)
 
 add_executable(TrafficSim ${SOURCE_FILES})

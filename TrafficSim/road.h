@@ -6,7 +6,7 @@
 #include <iostream>
 #include "semaphore.h"
 #include "vehicle.h"
-#include "structures/linked_queue.h"
+#include "../structures/linked_queue.h"
 
 class Road {
  protected:
