@@ -14,6 +14,16 @@ Road::Road(std::size_t size, int speed, double probWest, double probEast) {
 
 Road::~Road() {}
 
+
+void Road::add(const Vehicle& vehicle) {
+	if(used_ + vehicle.getSize() > size_) {
+		throw std::out_of_range("Road is full");  //
+	}
+	queue_.enqueue(vehicle);
+	used_ += vehicle.getSize();  // Diminui o tamanho restante.
+}
+
+
 std::size_t Road::getSize() {
 	return size_;
 }
@@ -31,14 +41,6 @@ wayIn::wayIn(int freq) {
 }
 
 wayIn::~wayIn() {}
-
-void wayIn::add(const Vehicle& vehicle) {
-	if(used_ + vehicle.getSize() > size_) {
-		throw std::out_of_range("Road is full");  //
-	}
-	queue_.enqueue(vehicle);
-	used_ += vehicle.getSize();  // Diminui o tamanho restante.
-}
 
 wayOut::wayOut() {}  // To do
 

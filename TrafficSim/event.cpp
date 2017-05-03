@@ -12,7 +12,7 @@ Event::Event(int t) {
 
 Event::~Event() {}
 
-newVehicle::newVehicle(int t, Road& road) {
+newVehicle::newVehicle(int t, wayIn& road) {
 	t_ = t;
 	road_ = road;
 }
@@ -20,7 +20,7 @@ newVehicle::newVehicle(int t, Road& road) {
 newVehicle::~newVehicle() {}
 
 void newVehicle::event() {
-	//To do
+	road_.add((const Vehicle &) new Vehicle());
 }
 
 changeSem::changeSem(int t, Semaphore& semaphore) {

@@ -26,10 +26,10 @@ class Event {
  */
 class newVehicle : Event {
  private:
-	Road road_;
+	wayIn road_ = wayIn(0);
 
  public:
-	newVehicle(int t, Road& road);
+	newVehicle(int t, wayIn& road);
 	~newVehicle();
 	void event();
 };

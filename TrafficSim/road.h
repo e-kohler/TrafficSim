@@ -19,6 +19,7 @@ class Road {
 	Road();
 	Road(std::size_t size, int speed, double probWest, double probEast);
 	~Road();
+	void add(const Vehicle& vehicle);
 	std::size_t getSize();
 	int getSpeed();
 	bool isEmpty();
@@ -31,7 +32,6 @@ class wayIn : Road {
  public:
 	wayIn(int freq);
 	~wayIn();
-	void add(const Vehicle& vehicle);
 };
 
 class wayOut : Road {
