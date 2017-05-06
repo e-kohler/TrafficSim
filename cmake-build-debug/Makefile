@@ -123,140 +123,140 @@ TrafficSim/fast:
 	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/build
 .PHONY : TrafficSim/fast
 
-event.o: event.cpp.o
+TrafficSim/event.o: TrafficSim/event.cpp.o
 
-.PHONY : event.o
-
-# target to build an object file
-event.cpp.o:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/event.cpp.o
-.PHONY : event.cpp.o
-
-event.i: event.cpp.i
-
-.PHONY : event.i
-
-# target to preprocess a source file
-event.cpp.i:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/event.cpp.i
-.PHONY : event.cpp.i
-
-event.s: event.cpp.s
-
-.PHONY : event.s
-
-# target to generate assembly for a file
-event.cpp.s:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/event.cpp.s
-.PHONY : event.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
+.PHONY : TrafficSim/event.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/main.cpp.o
-.PHONY : main.cpp.o
+TrafficSim/event.cpp.o:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o
+.PHONY : TrafficSim/event.cpp.o
 
-main.i: main.cpp.i
+TrafficSim/event.i: TrafficSim/event.cpp.i
 
-.PHONY : main.i
+.PHONY : TrafficSim/event.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/main.cpp.i
-.PHONY : main.cpp.i
+TrafficSim/event.cpp.i:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.i
+.PHONY : TrafficSim/event.cpp.i
 
-main.s: main.cpp.s
+TrafficSim/event.s: TrafficSim/event.cpp.s
 
-.PHONY : main.s
+.PHONY : TrafficSim/event.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/main.cpp.s
-.PHONY : main.cpp.s
+TrafficSim/event.cpp.s:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.s
+.PHONY : TrafficSim/event.cpp.s
 
-road.o: road.cpp.o
+TrafficSim/main.o: TrafficSim/main.cpp.o
 
-.PHONY : road.o
+.PHONY : TrafficSim/main.o
 
 # target to build an object file
-road.cpp.o:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/road.cpp.o
-.PHONY : road.cpp.o
+TrafficSim/main.cpp.o:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o
+.PHONY : TrafficSim/main.cpp.o
 
-road.i: road.cpp.i
+TrafficSim/main.i: TrafficSim/main.cpp.i
 
-.PHONY : road.i
+.PHONY : TrafficSim/main.i
 
 # target to preprocess a source file
-road.cpp.i:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/road.cpp.i
-.PHONY : road.cpp.i
+TrafficSim/main.cpp.i:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.i
+.PHONY : TrafficSim/main.cpp.i
 
-road.s: road.cpp.s
+TrafficSim/main.s: TrafficSim/main.cpp.s
 
-.PHONY : road.s
+.PHONY : TrafficSim/main.s
 
 # target to generate assembly for a file
-road.cpp.s:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/road.cpp.s
-.PHONY : road.cpp.s
+TrafficSim/main.cpp.s:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.s
+.PHONY : TrafficSim/main.cpp.s
 
-semaphore.o: semaphore.cpp.o
+TrafficSim/road.o: TrafficSim/road.cpp.o
 
-.PHONY : semaphore.o
+.PHONY : TrafficSim/road.o
 
 # target to build an object file
-semaphore.cpp.o:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/semaphore.cpp.o
-.PHONY : semaphore.cpp.o
+TrafficSim/road.cpp.o:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o
+.PHONY : TrafficSim/road.cpp.o
 
-semaphore.i: semaphore.cpp.i
+TrafficSim/road.i: TrafficSim/road.cpp.i
 
-.PHONY : semaphore.i
+.PHONY : TrafficSim/road.i
 
 # target to preprocess a source file
-semaphore.cpp.i:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/semaphore.cpp.i
-.PHONY : semaphore.cpp.i
+TrafficSim/road.cpp.i:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.i
+.PHONY : TrafficSim/road.cpp.i
 
-semaphore.s: semaphore.cpp.s
+TrafficSim/road.s: TrafficSim/road.cpp.s
 
-.PHONY : semaphore.s
+.PHONY : TrafficSim/road.s
 
 # target to generate assembly for a file
-semaphore.cpp.s:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/semaphore.cpp.s
-.PHONY : semaphore.cpp.s
+TrafficSim/road.cpp.s:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.s
+.PHONY : TrafficSim/road.cpp.s
 
-vehicle.o: vehicle.cpp.o
+TrafficSim/semaphore.o: TrafficSim/semaphore.cpp.o
 
-.PHONY : vehicle.o
+.PHONY : TrafficSim/semaphore.o
 
 # target to build an object file
-vehicle.cpp.o:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/vehicle.cpp.o
-.PHONY : vehicle.cpp.o
+TrafficSim/semaphore.cpp.o:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o
+.PHONY : TrafficSim/semaphore.cpp.o
 
-vehicle.i: vehicle.cpp.i
+TrafficSim/semaphore.i: TrafficSim/semaphore.cpp.i
 
-.PHONY : vehicle.i
+.PHONY : TrafficSim/semaphore.i
 
 # target to preprocess a source file
-vehicle.cpp.i:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/vehicle.cpp.i
-.PHONY : vehicle.cpp.i
+TrafficSim/semaphore.cpp.i:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.i
+.PHONY : TrafficSim/semaphore.cpp.i
 
-vehicle.s: vehicle.cpp.s
+TrafficSim/semaphore.s: TrafficSim/semaphore.cpp.s
 
-.PHONY : vehicle.s
+.PHONY : TrafficSim/semaphore.s
 
 # target to generate assembly for a file
-vehicle.cpp.s:
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/vehicle.cpp.s
-.PHONY : vehicle.cpp.s
+TrafficSim/semaphore.cpp.s:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.s
+.PHONY : TrafficSim/semaphore.cpp.s
+
+TrafficSim/vehicle.o: TrafficSim/vehicle.cpp.o
+
+.PHONY : TrafficSim/vehicle.o
+
+# target to build an object file
+TrafficSim/vehicle.cpp.o:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o
+.PHONY : TrafficSim/vehicle.cpp.o
+
+TrafficSim/vehicle.i: TrafficSim/vehicle.cpp.i
+
+.PHONY : TrafficSim/vehicle.i
+
+# target to preprocess a source file
+TrafficSim/vehicle.cpp.i:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.i
+.PHONY : TrafficSim/vehicle.cpp.i
+
+TrafficSim/vehicle.s: TrafficSim/vehicle.cpp.s
+
+.PHONY : TrafficSim/vehicle.s
+
+# target to generate assembly for a file
+TrafficSim/vehicle.cpp.s:
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.s
+.PHONY : TrafficSim/vehicle.cpp.s
 
 # Help Target
 help:
@@ -267,21 +267,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... TrafficSim"
-	@echo "... event.o"
-	@echo "... event.i"
-	@echo "... event.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... road.o"
-	@echo "... road.i"
-	@echo "... road.s"
-	@echo "... semaphore.o"
-	@echo "... semaphore.i"
-	@echo "... semaphore.s"
-	@echo "... vehicle.o"
-	@echo "... vehicle.i"
-	@echo "... vehicle.s"
+	@echo "... TrafficSim/event.o"
+	@echo "... TrafficSim/event.i"
+	@echo "... TrafficSim/event.s"
+	@echo "... TrafficSim/main.o"
+	@echo "... TrafficSim/main.i"
+	@echo "... TrafficSim/main.s"
+	@echo "... TrafficSim/road.o"
+	@echo "... TrafficSim/road.i"
+	@echo "... TrafficSim/road.s"
+	@echo "... TrafficSim/semaphore.o"
+	@echo "... TrafficSim/semaphore.i"
+	@echo "... TrafficSim/semaphore.s"
+	@echo "... TrafficSim/vehicle.o"
+	@echo "... TrafficSim/vehicle.i"
+	@echo "... TrafficSim/vehicle.s"
 .PHONY : help
 
 

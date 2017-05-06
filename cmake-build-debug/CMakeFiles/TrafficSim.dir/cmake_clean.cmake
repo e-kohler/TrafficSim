@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/TrafficSim.dir/event.cpp.o"
-  "CMakeFiles/TrafficSim.dir/main.cpp.o"
-  "CMakeFiles/TrafficSim.dir/road.cpp.o"
-  "CMakeFiles/TrafficSim.dir/semaphore.cpp.o"
-  "CMakeFiles/TrafficSim.dir/vehicle.cpp.o"
+  "CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o"
+  "CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o"
+  "CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o"
+  "CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o"
+  "CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o"
   "TrafficSim.pdb"
   "TrafficSim"
 )

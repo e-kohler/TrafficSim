@@ -1,11 +1,12 @@
 //  Copyright [2017] Eduardo Kohler & Lucas Suppes
 
-#include <cstdint>
-#include <stdlib.h>
 #include "semaphore.h"
 
-Semaphore::Semaphore() {
+Semaphore::Semaphore() = default;
+
+Semaphore::Semaphore(int freq) {
 	isOpen_ = false;
+    freq_ = freq;
 }
 
 Semaphore::~Semaphore() {}
@@ -14,10 +15,11 @@ bool Semaphore::isOpen() {
 	return isOpen_;
 }
 
-void Semaphore::open() {
-	isOpen_ = true;
+void Semaphore::change() {
+	isOpen_ = !isOpen_;
 }
 
-void Semaphore::close() {
-	isOpen_ = false;
+int Semaphore::getFreq() {
+    return freq_;
 }
+

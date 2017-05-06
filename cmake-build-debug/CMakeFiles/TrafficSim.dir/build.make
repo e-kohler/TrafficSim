@@ -57,142 +57,142 @@ include CMakeFiles/TrafficSim.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/TrafficSim.dir/flags.make
 
-CMakeFiles/TrafficSim.dir/event.cpp.o: CMakeFiles/TrafficSim.dir/flags.make
-CMakeFiles/TrafficSim.dir/event.cpp.o: ../event.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TrafficSim.dir/event.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TrafficSim.dir/event.cpp.o -c /home/eduardok/workspace/TrafficSim/event.cpp
+CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o: CMakeFiles/TrafficSim.dir/flags.make
+CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o: ../TrafficSim/event.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o -c /home/eduardok/workspace/TrafficSim/TrafficSim/event.cpp
 
-CMakeFiles/TrafficSim.dir/event.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrafficSim.dir/event.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eduardok/workspace/TrafficSim/event.cpp > CMakeFiles/TrafficSim.dir/event.cpp.i
+CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eduardok/workspace/TrafficSim/TrafficSim/event.cpp > CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.i
 
-CMakeFiles/TrafficSim.dir/event.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrafficSim.dir/event.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eduardok/workspace/TrafficSim/event.cpp -o CMakeFiles/TrafficSim.dir/event.cpp.s
+CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eduardok/workspace/TrafficSim/TrafficSim/event.cpp -o CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.s
 
-CMakeFiles/TrafficSim.dir/event.cpp.o.requires:
+CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o.requires:
 
-.PHONY : CMakeFiles/TrafficSim.dir/event.cpp.o.requires
+.PHONY : CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o.requires
 
-CMakeFiles/TrafficSim.dir/event.cpp.o.provides: CMakeFiles/TrafficSim.dir/event.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/event.cpp.o.provides.build
-.PHONY : CMakeFiles/TrafficSim.dir/event.cpp.o.provides
+CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o.provides: CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o.provides.build
+.PHONY : CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o.provides
 
-CMakeFiles/TrafficSim.dir/event.cpp.o.provides.build: CMakeFiles/TrafficSim.dir/event.cpp.o
-
-
-CMakeFiles/TrafficSim.dir/main.cpp.o: CMakeFiles/TrafficSim.dir/flags.make
-CMakeFiles/TrafficSim.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TrafficSim.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TrafficSim.dir/main.cpp.o -c /home/eduardok/workspace/TrafficSim/main.cpp
-
-CMakeFiles/TrafficSim.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrafficSim.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eduardok/workspace/TrafficSim/main.cpp > CMakeFiles/TrafficSim.dir/main.cpp.i
-
-CMakeFiles/TrafficSim.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrafficSim.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eduardok/workspace/TrafficSim/main.cpp -o CMakeFiles/TrafficSim.dir/main.cpp.s
-
-CMakeFiles/TrafficSim.dir/main.cpp.o.requires:
-
-.PHONY : CMakeFiles/TrafficSim.dir/main.cpp.o.requires
-
-CMakeFiles/TrafficSim.dir/main.cpp.o.provides: CMakeFiles/TrafficSim.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/TrafficSim.dir/main.cpp.o.provides
-
-CMakeFiles/TrafficSim.dir/main.cpp.o.provides.build: CMakeFiles/TrafficSim.dir/main.cpp.o
+CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o.provides.build: CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o
 
 
-CMakeFiles/TrafficSim.dir/road.cpp.o: CMakeFiles/TrafficSim.dir/flags.make
-CMakeFiles/TrafficSim.dir/road.cpp.o: ../road.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TrafficSim.dir/road.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TrafficSim.dir/road.cpp.o -c /home/eduardok/workspace/TrafficSim/road.cpp
+CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o: CMakeFiles/TrafficSim.dir/flags.make
+CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o: ../TrafficSim/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o -c /home/eduardok/workspace/TrafficSim/TrafficSim/main.cpp
 
-CMakeFiles/TrafficSim.dir/road.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrafficSim.dir/road.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eduardok/workspace/TrafficSim/road.cpp > CMakeFiles/TrafficSim.dir/road.cpp.i
+CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eduardok/workspace/TrafficSim/TrafficSim/main.cpp > CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.i
 
-CMakeFiles/TrafficSim.dir/road.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrafficSim.dir/road.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eduardok/workspace/TrafficSim/road.cpp -o CMakeFiles/TrafficSim.dir/road.cpp.s
+CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eduardok/workspace/TrafficSim/TrafficSim/main.cpp -o CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.s
 
-CMakeFiles/TrafficSim.dir/road.cpp.o.requires:
+CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o.requires:
 
-.PHONY : CMakeFiles/TrafficSim.dir/road.cpp.o.requires
+.PHONY : CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o.requires
 
-CMakeFiles/TrafficSim.dir/road.cpp.o.provides: CMakeFiles/TrafficSim.dir/road.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/road.cpp.o.provides.build
-.PHONY : CMakeFiles/TrafficSim.dir/road.cpp.o.provides
+CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o.provides: CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o.provides.build
+.PHONY : CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o.provides
 
-CMakeFiles/TrafficSim.dir/road.cpp.o.provides.build: CMakeFiles/TrafficSim.dir/road.cpp.o
-
-
-CMakeFiles/TrafficSim.dir/semaphore.cpp.o: CMakeFiles/TrafficSim.dir/flags.make
-CMakeFiles/TrafficSim.dir/semaphore.cpp.o: ../semaphore.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TrafficSim.dir/semaphore.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TrafficSim.dir/semaphore.cpp.o -c /home/eduardok/workspace/TrafficSim/semaphore.cpp
-
-CMakeFiles/TrafficSim.dir/semaphore.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrafficSim.dir/semaphore.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eduardok/workspace/TrafficSim/semaphore.cpp > CMakeFiles/TrafficSim.dir/semaphore.cpp.i
-
-CMakeFiles/TrafficSim.dir/semaphore.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrafficSim.dir/semaphore.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eduardok/workspace/TrafficSim/semaphore.cpp -o CMakeFiles/TrafficSim.dir/semaphore.cpp.s
-
-CMakeFiles/TrafficSim.dir/semaphore.cpp.o.requires:
-
-.PHONY : CMakeFiles/TrafficSim.dir/semaphore.cpp.o.requires
-
-CMakeFiles/TrafficSim.dir/semaphore.cpp.o.provides: CMakeFiles/TrafficSim.dir/semaphore.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/semaphore.cpp.o.provides.build
-.PHONY : CMakeFiles/TrafficSim.dir/semaphore.cpp.o.provides
-
-CMakeFiles/TrafficSim.dir/semaphore.cpp.o.provides.build: CMakeFiles/TrafficSim.dir/semaphore.cpp.o
+CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o.provides.build: CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o
 
 
-CMakeFiles/TrafficSim.dir/vehicle.cpp.o: CMakeFiles/TrafficSim.dir/flags.make
-CMakeFiles/TrafficSim.dir/vehicle.cpp.o: ../vehicle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TrafficSim.dir/vehicle.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TrafficSim.dir/vehicle.cpp.o -c /home/eduardok/workspace/TrafficSim/vehicle.cpp
+CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o: CMakeFiles/TrafficSim.dir/flags.make
+CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o: ../TrafficSim/road.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o -c /home/eduardok/workspace/TrafficSim/TrafficSim/road.cpp
 
-CMakeFiles/TrafficSim.dir/vehicle.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrafficSim.dir/vehicle.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eduardok/workspace/TrafficSim/vehicle.cpp > CMakeFiles/TrafficSim.dir/vehicle.cpp.i
+CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eduardok/workspace/TrafficSim/TrafficSim/road.cpp > CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.i
 
-CMakeFiles/TrafficSim.dir/vehicle.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrafficSim.dir/vehicle.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eduardok/workspace/TrafficSim/vehicle.cpp -o CMakeFiles/TrafficSim.dir/vehicle.cpp.s
+CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eduardok/workspace/TrafficSim/TrafficSim/road.cpp -o CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.s
 
-CMakeFiles/TrafficSim.dir/vehicle.cpp.o.requires:
+CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o.requires:
 
-.PHONY : CMakeFiles/TrafficSim.dir/vehicle.cpp.o.requires
+.PHONY : CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o.requires
 
-CMakeFiles/TrafficSim.dir/vehicle.cpp.o.provides: CMakeFiles/TrafficSim.dir/vehicle.cpp.o.requires
-	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/vehicle.cpp.o.provides.build
-.PHONY : CMakeFiles/TrafficSim.dir/vehicle.cpp.o.provides
+CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o.provides: CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o.provides.build
+.PHONY : CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o.provides
 
-CMakeFiles/TrafficSim.dir/vehicle.cpp.o.provides.build: CMakeFiles/TrafficSim.dir/vehicle.cpp.o
+CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o.provides.build: CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o
+
+
+CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o: CMakeFiles/TrafficSim.dir/flags.make
+CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o: ../TrafficSim/semaphore.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o -c /home/eduardok/workspace/TrafficSim/TrafficSim/semaphore.cpp
+
+CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eduardok/workspace/TrafficSim/TrafficSim/semaphore.cpp > CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.i
+
+CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eduardok/workspace/TrafficSim/TrafficSim/semaphore.cpp -o CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.s
+
+CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o.requires:
+
+.PHONY : CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o.requires
+
+CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o.provides: CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o.provides.build
+.PHONY : CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o.provides
+
+CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o.provides.build: CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o
+
+
+CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o: CMakeFiles/TrafficSim.dir/flags.make
+CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o: ../TrafficSim/vehicle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o -c /home/eduardok/workspace/TrafficSim/TrafficSim/vehicle.cpp
+
+CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/eduardok/workspace/TrafficSim/TrafficSim/vehicle.cpp > CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.i
+
+CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/eduardok/workspace/TrafficSim/TrafficSim/vehicle.cpp -o CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.s
+
+CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o.requires:
+
+.PHONY : CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o.requires
+
+CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o.provides: CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o.requires
+	$(MAKE) -f CMakeFiles/TrafficSim.dir/build.make CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o.provides.build
+.PHONY : CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o.provides
+
+CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o.provides.build: CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o
 
 
 # Object files for target TrafficSim
 TrafficSim_OBJECTS = \
-"CMakeFiles/TrafficSim.dir/event.cpp.o" \
-"CMakeFiles/TrafficSim.dir/main.cpp.o" \
-"CMakeFiles/TrafficSim.dir/road.cpp.o" \
-"CMakeFiles/TrafficSim.dir/semaphore.cpp.o" \
-"CMakeFiles/TrafficSim.dir/vehicle.cpp.o"
+"CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o" \
+"CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o" \
+"CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o" \
+"CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o" \
+"CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o"
 
 # External object files for target TrafficSim
 TrafficSim_EXTERNAL_OBJECTS =
 
-TrafficSim: CMakeFiles/TrafficSim.dir/event.cpp.o
-TrafficSim: CMakeFiles/TrafficSim.dir/main.cpp.o
-TrafficSim: CMakeFiles/TrafficSim.dir/road.cpp.o
-TrafficSim: CMakeFiles/TrafficSim.dir/semaphore.cpp.o
-TrafficSim: CMakeFiles/TrafficSim.dir/vehicle.cpp.o
+TrafficSim: CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o
+TrafficSim: CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o
+TrafficSim: CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o
+TrafficSim: CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o
+TrafficSim: CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o
 TrafficSim: CMakeFiles/TrafficSim.dir/build.make
 TrafficSim: CMakeFiles/TrafficSim.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable TrafficSim"
@@ -203,11 +203,11 @@ CMakeFiles/TrafficSim.dir/build: TrafficSim
 
 .PHONY : CMakeFiles/TrafficSim.dir/build
 
-CMakeFiles/TrafficSim.dir/requires: CMakeFiles/TrafficSim.dir/event.cpp.o.requires
-CMakeFiles/TrafficSim.dir/requires: CMakeFiles/TrafficSim.dir/main.cpp.o.requires
-CMakeFiles/TrafficSim.dir/requires: CMakeFiles/TrafficSim.dir/road.cpp.o.requires
-CMakeFiles/TrafficSim.dir/requires: CMakeFiles/TrafficSim.dir/semaphore.cpp.o.requires
-CMakeFiles/TrafficSim.dir/requires: CMakeFiles/TrafficSim.dir/vehicle.cpp.o.requires
+CMakeFiles/TrafficSim.dir/requires: CMakeFiles/TrafficSim.dir/TrafficSim/event.cpp.o.requires
+CMakeFiles/TrafficSim.dir/requires: CMakeFiles/TrafficSim.dir/TrafficSim/main.cpp.o.requires
+CMakeFiles/TrafficSim.dir/requires: CMakeFiles/TrafficSim.dir/TrafficSim/road.cpp.o.requires
+CMakeFiles/TrafficSim.dir/requires: CMakeFiles/TrafficSim.dir/TrafficSim/semaphore.cpp.o.requires
+CMakeFiles/TrafficSim.dir/requires: CMakeFiles/TrafficSim.dir/TrafficSim/vehicle.cpp.o.requires
 
 .PHONY : CMakeFiles/TrafficSim.dir/requires
 

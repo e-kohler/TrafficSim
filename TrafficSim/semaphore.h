@@ -14,14 +14,18 @@
 class Semaphore {
  private:
 	bool isOpen_;
+    int freq_;
 	structures::LinkedList<structures::LinkedQueue<Vehicle>> waysOut_;  // Lista de pistas de saída
 	structures::LinkedList<structures::LinkedQueue<Vehicle>> waysIn_;  // Lista de pistas de entrada
 
  public:
-	Semaphore();
-	~Semaphore();
+	Semaphore(int freq);
+
+    Semaphore();
+
+    ~Semaphore();
 	bool isOpen();
-	void close();
-	void open();
+	void change();
+    int getFreq();
 };
 #endif

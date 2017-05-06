@@ -1,12 +1,13 @@
 //  Copyright [2017] Eduardo Kohler & Lucas Suppes
 
 #include "road.h"
-#include <cstdint>
-#include <stdlib.h>
 
-Road::Road(std::size_t size, int speed, double probWest, double probEast) {
+Road::Road()  = default;
+
+Road::Road(int size, int speed, double probWest, double probEast, Semaphore& semaphore) {
 	used_ = 0;
 	size_ = size;
+    semaphore_ = semaphore;
 	speed_ = speed;
 	probWest_ = probWest;
 	probEast_ = probEast;
@@ -14,17 +15,18 @@ Road::Road(std::size_t size, int speed, double probWest, double probEast) {
 
 Road::~Road() {}
 
-
-void Road::add(const Vehicle& vehicle) {
+bool Road::add(const Vehicle& vehicle) {
 	if(used_ + vehicle.getSize() > size_) {
-		throw std::out_of_range("Road is full");  //
-	}
-	queue_.enqueue(vehicle);
-	used_ += vehicle.getSize();  // Diminui o tamanho restante.
+        return false;
+	} else {
+        queue_.enqueue(vehicle);
+        used_ += vehicle.getSize();
+        return true;
+    }
 }
 
 
-std::size_t Road::getSize() {
+int Road::getSize() {
 	return size_;
 }
 
@@ -36,17 +38,27 @@ bool Road::isEmpty() {
 	return queue_.empty();
 }
 
+Semaphore& Road::getSemaphore() {
+    return semaphore_;
+}
+
+Vehicle& Road::last() {
+    return queue_.back();
+}
+
+wayIn::wayIn() = default;
+
 wayIn::wayIn(int freq) {
 	freq_ = freq;
 }
 
-wayIn::~wayIn() {}
+wayOut::wayOut() = default;
 
-wayOut::wayOut() {}  // To do
+wayOut::wayOut() {}
 
 void wayOut::remove() {
-	queue_.dequeue();
-	used_ -= queue_.front().getSize();
+    used_ -= queue_.front().getSize();
+    queue_.dequeue();
 }
 
 

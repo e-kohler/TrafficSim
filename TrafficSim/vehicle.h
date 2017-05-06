@@ -8,11 +8,11 @@
 
 class Vehicle {
  private:
-	std::size_t size_;
+	int size_;
 
  public:
 	Vehicle();
 	~Vehicle();
-	std::size_t getSize() const;
+	int getSize() const;
 };
 #endif

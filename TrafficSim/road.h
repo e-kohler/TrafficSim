@@ -10,19 +10,22 @@
 
 class Road {
  protected:
-	std::size_t used_, size_;
+	int used_, size_;
 	int speed_;
 	double probEast_, probWest_;
 	structures::LinkedQueue<Vehicle> queue_;
+    Semaphore semaphore_;
 
  public:
-	Road();
-	Road(std::size_t size, int speed, double probWest, double probEast);
-	~Road();
-	void add(const Vehicle& vehicle);
-	std::size_t getSize();
+	Road(int size, int speed, double probWest, double probEast, Semaphore& semaphore);
+    Road();
+    ~Road();
+	bool add(const Vehicle& vehicle);
+	int getSize();
 	int getSpeed();
 	bool isEmpty();
+    Semaphore& getSemaphore();
+    Vehicle& last();
 };
 
 class wayIn : Road {
@@ -30,14 +33,13 @@ class wayIn : Road {
 	int freq_;
 
  public:
+    wayIn();
 	wayIn(int freq);
-	~wayIn();
 };
 
 class wayOut : Road {
  public:
 	wayOut();
-	~wayOut();
 	void remove();
 };
 

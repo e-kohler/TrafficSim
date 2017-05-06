@@ -8,6 +8,8 @@
 #include "vehicle.h"
 #include "road.h"
 #include "semaphore.h"
+#include "../structures/linked_list.h"
+
 /**
  * @brief Class that specifies certain events.
  */
@@ -19,19 +21,21 @@ class Event {
 	Event();
 	Event(int t);
 	~Event();
-	void event();  // Method that performs the actual event.
+	bool operator>(Event event);
+    bool operator=(Event event);
+	virtual structures::LinkedList<Event> run(structures::LinkedList<Event> events);  // Method that performs the actual event.
 };
 /**
  * @brief New vehicle is added to a specific road.
  */
 class newVehicle : Event {
  private:
-	wayIn road_ = wayIn(0);
+	wayIn road_;
 
  public:
+    newVehicle();
 	newVehicle(int t, wayIn& road);
-	~newVehicle();
-	void event();
+    structures::LinkedList<Event> run(structures::LinkedList<Event> events);
 };
 /**
  * @brief When a semaphore changes its state.
@@ -41,9 +45,9 @@ class changeSem : Event {
 	Semaphore semaphore_;
 
  public:
+    changeSem();
 	changeSem(int t, Semaphore& semaphore);
-	~changeSem();
-	void event();
+	structures::LinkedList<Event> run(structures::LinkedList<Event> events);
 };
 /**
  * @brief When a vehicle waits for a semaphore.
@@ -54,9 +58,9 @@ class vehInSem : Event {
 	Vehicle vehicle_;
 
  public:
+    vehInSem();
 	vehInSem(int t, Semaphore& semaphore, Vehicle& vehicle);
-	~vehInSem();
-	void event();
+	structures::LinkedList<Event> run(structures::LinkedList<Event> events);
 };
 /**
  * @brief When a vehicle moves to another road.
@@ -66,8 +70,8 @@ class changeRoad : Event {
 	Road road_;
 	Vehicle vehicle_;
  public:
+    changeRoad();
 	changeRoad(int t, Road& road, Vehicle& vehicle);
-	~changeRoad();
-	void event();
+	structures::LinkedList<Event> run(structures::LinkedList<Event> events);
 };
 #endif

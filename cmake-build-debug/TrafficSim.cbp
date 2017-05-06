@@ -82,25 +82,31 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/eduardok/workspace/TrafficSim/event.cpp">
+		<Unit filename="/home/eduardok/workspace/TrafficSim/TrafficSim/event.cpp">
 			<Option target="TrafficSim"/>
 		</Unit>
-		<Unit filename="/home/eduardok/workspace/TrafficSim/event.h">
+		<Unit filename="/home/eduardok/workspace/TrafficSim/TrafficSim/event.h">
 			<Option target="TrafficSim"/>
 		</Unit>
-		<Unit filename="/home/eduardok/workspace/TrafficSim/main.cpp">
+		<Unit filename="/home/eduardok/workspace/TrafficSim/TrafficSim/main.cpp">
 			<Option target="TrafficSim"/>
 		</Unit>
-		<Unit filename="/home/eduardok/workspace/TrafficSim/road.cpp">
+		<Unit filename="/home/eduardok/workspace/TrafficSim/TrafficSim/road.cpp">
 			<Option target="TrafficSim"/>
 		</Unit>
-		<Unit filename="/home/eduardok/workspace/TrafficSim/road.h">
+		<Unit filename="/home/eduardok/workspace/TrafficSim/TrafficSim/road.h">
 			<Option target="TrafficSim"/>
 		</Unit>
-		<Unit filename="/home/eduardok/workspace/TrafficSim/semaphore.cpp">
+		<Unit filename="/home/eduardok/workspace/TrafficSim/TrafficSim/semaphore.cpp">
 			<Option target="TrafficSim"/>
 		</Unit>
-		<Unit filename="/home/eduardok/workspace/TrafficSim/semaphore.h">
+		<Unit filename="/home/eduardok/workspace/TrafficSim/TrafficSim/semaphore.h">
+			<Option target="TrafficSim"/>
+		</Unit>
+		<Unit filename="/home/eduardok/workspace/TrafficSim/TrafficSim/vehicle.cpp">
+			<Option target="TrafficSim"/>
+		</Unit>
+		<Unit filename="/home/eduardok/workspace/TrafficSim/TrafficSim/vehicle.h">
 			<Option target="TrafficSim"/>
 		</Unit>
 		<Unit filename="/home/eduardok/workspace/TrafficSim/structures/array_list.h">
@@ -128,12 +134,6 @@
 			<Option target="TrafficSim"/>
 		</Unit>
 		<Unit filename="/home/eduardok/workspace/TrafficSim/structures/linked_stack.h">
-			<Option target="TrafficSim"/>
-		</Unit>
-		<Unit filename="/home/eduardok/workspace/TrafficSim/vehicle.cpp">
-			<Option target="TrafficSim"/>
-		</Unit>
-		<Unit filename="/home/eduardok/workspace/TrafficSim/vehicle.h">
 			<Option target="TrafficSim"/>
 		</Unit>
 		<Unit filename="/home/eduardok/workspace/TrafficSim/CMakeLists.txt">
