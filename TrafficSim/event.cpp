@@ -3,7 +3,7 @@
 Event::Event() = default;
 
 Event::Event(int t) {
-	t_ = t;
+	t_ = t;  // teste
 }
 
 Event::~Event() {}
@@ -17,7 +17,7 @@ bool Event::operator=(Event event) {
 }
 
 structures::LinkedList<Event>  Event::run(structures::LinkedList<Event> events) {
-    throw ("Não serve pra nada.");
+    throw ("Não serve pra nada, que nem você");
 }
 
 newVehicle::newVehicle() = default;
