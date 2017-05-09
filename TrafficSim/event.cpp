@@ -28,15 +28,16 @@ newVehicle::newVehicle(int t, wayIn& road) {
 }
 
 /**
- * @brief Recebe a lista de eventos do sistema, adiciona um carro à pista, e coloca o evento de quando esse o carro chega
- *        no semáforo da pista, com um tempo baseado na velocidade do carro, no tamanho da pista e no tempo atual.
+ * @brief Recebe a lista de eventos do sistema, adiciona um carro à pista, e coloca o evento de quando essa
+ *        pista recebe um outro carro, com um tempo baseado na frequência da rua.
  * @param events Lista de eventos do sistema.
  * @return Lista de eventos atualizada.
  */
 structures::LinkedList<Event> newVehicle::run(structures::LinkedList<Event> events) {
     int timeInRoad = road_.getSize() / road_.getSpeed();
-	if(road_.add((const Vehicle &) new Vehicle())) {
-        events.insert_sorted((const Event &) new vehInSem(t_ + timeInRoad, road_.getSemaphore(), road_.last()));
+    Vehicle vehicle;
+	if(road_.add(vehicle)) {
+        events.insert_sorted((const Event &) new newVehicle(t_ + road_.getFreq(), road_));
     }
     return events;
 }
@@ -59,15 +60,15 @@ structures::LinkedList<Event> changeSem::run(structures::LinkedList<Event> event
     events.insert_sorted((const Event &) new changeSem(nextChange, semaphore_));
 }
 
-vehInSem::vehInSem() = default;
+carInSem::carInSem() = default;
 
-vehInSem::vehInSem(int t, Semaphore& semaphore, Vehicle& vehicle) {
+carInSem::carInSem(int t, Semaphore& semaphore, Vehicle& vehicle) {
 	t_ = t;
 	semaphore_ = semaphore;
 	vehicle_ = vehicle;
 }
 
-structures::LinkedList<Event> vehInSem::run(structures::LinkedList<Event> events) {
+structures::LinkedList<Event> carInSem::run(structures::LinkedList<Event> events) {
 	//To do
 }
 

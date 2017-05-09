@@ -23,6 +23,7 @@ class Road {
 	bool add(const Vehicle& vehicle);
 	int getSize();
 	int getSpeed();
+    int getAvailable();
 	bool isEmpty();
     Semaphore& getSemaphore();
     Vehicle& last();
@@ -35,6 +36,7 @@ class wayIn : Road {
  public:
     wayIn();
 	wayIn(int freq);
+    int getFreq();
 };
 
 class wayOut : Road {

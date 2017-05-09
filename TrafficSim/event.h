@@ -52,14 +52,14 @@ class changeSem : Event {
 /**
  * @brief When a vehicle waits for a semaphore.
  */
-class vehInSem : Event {
+class carInSem : Event {
  private:
 	Semaphore semaphore_;
 	Vehicle vehicle_;
 
  public:
-    vehInSem();
-	vehInSem(int t, Semaphore& semaphore, Vehicle& vehicle);
+    carInSem();
+	carInSem(int t, Semaphore& semaphore, Vehicle& vehicle);
 	structures::LinkedList<Event> run(structures::LinkedList<Event> events);
 };
 /**

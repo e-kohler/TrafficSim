@@ -34,6 +34,10 @@ int Road:: getSpeed() {
 	return speed_;
 }
 
+int Road::getAvailable() {
+    return size_ - used_;
+}
+
 bool Road::isEmpty() {
 	return queue_.empty();
 }
@@ -50,6 +54,10 @@ wayIn::wayIn() = default;
 
 wayIn::wayIn(int freq) {
 	freq_ = freq;
+}
+
+int wayIn::getFreq() {
+    return freq_;
 }
 
 wayOut::wayOut() = default;
