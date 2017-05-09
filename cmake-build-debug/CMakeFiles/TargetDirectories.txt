@@ -1,3 +1,0 @@
-/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/eduardok/workspace/TrafficSim/cmake-build-debug/CMakeFiles/TrafficSim.dir
