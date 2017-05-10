@@ -7,8 +7,6 @@ Event::Event(int t) {
 	t_ = t;  // teste
 }
 
-Event::~Event() {}
-
 bool Event::operator<(const Event& e) const {
     return t_ < e.t_;
 }

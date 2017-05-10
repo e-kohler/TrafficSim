@@ -20,7 +20,6 @@ class Event {
  public:
 	Event();
 	Event(int t);
-	~Event();
     bool operator<(const Event& e) const;
     bool operator>(const Event& e) const;
     bool operator=(Event event);
