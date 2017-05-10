@@ -85,7 +85,10 @@ carInSem::carInSem(int t, Semaphore& semaphore, Vehicle& vehicle) {
 }
 
 structures::LinkedList<Event> carInSem::run(structures::LinkedList<Event> events) {
-	//To do
+	float i = float((rand()/RAND_MAX));
+    if(semaphore_.isOpen()) {
+        if(i < )
+    }
 }
 
 changeRoad::changeRoad() = default;

@@ -15,9 +15,10 @@ class Semaphore {
  private:
 	bool isOpen_;
     int freq_;
+    float probEast_, probWest_;
 
  public:
-	Semaphore(int freq);
+	Semaphore(int freq, float probEast, float probWest);
 
     Semaphore();
 
@@ -25,5 +26,7 @@ class Semaphore {
 	bool isOpen();
 	void change();
     int getFreq();
+    float getEast();
+    float getWest();
 };
 #endif

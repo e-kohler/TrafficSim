@@ -4,9 +4,11 @@
 
 Semaphore::Semaphore() = default;
 
-Semaphore::Semaphore(int freq) {
+Semaphore::Semaphore(int freq, float probEast, float probWest) {
 	isOpen_ = false;
     freq_ = freq;
+    probEast_ = probEast;
+    probWest_ = probWest;
 }
 
 Semaphore::~Semaphore() {}
@@ -21,5 +23,13 @@ void Semaphore::change() {
 
 int Semaphore::getFreq() {
     return freq_;
+}
+
+float Semaphore::getWest() {
+    return probWest_;
+}
+
+float Semaphore::getEast() {
+    return probEast_;
 }
 

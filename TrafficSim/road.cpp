@@ -4,13 +4,10 @@
 
 Road::Road()  = default;
 
-Road::Road(int size, int speed, double probWest, double probEast, Semaphore& semaphore, std::string name) {
+Road::Road(int size, int speed, std::string name) {
 	used_ = 0;
 	size_ = size;
-    semaphore_ = semaphore;
 	speed_ = speed;
-	probWest_ = probWest;
-	probEast_ = probEast;
     name_ = name;
 }
 
@@ -50,25 +47,26 @@ bool Road::isEmpty() {
 	return queue_.empty();
 }
 
-Semaphore& Road::getSemaphore() {
-    return semaphore_;
-}
-
 Vehicle& Road::last() {
     return queue_.back();
 }
 
 wayIn::wayIn() = default;
 
-wayIn::wayIn(int freq, wayOut west, wayOut east, middleRoad front) {
+wayIn::wayIn(int freq, wayOut west, wayOut east, middleRoad front, Semaphore semaphore) {
     west_ = west;
     east_ = east;
     front_ = front;
 	freq_ = freq;
+    semaphore_ = semaphore;
 }
 
 int wayIn::getFreq() {
     return freq_;
+}
+
+Semaphore& wayIn::getSemaphore() {
+    return semaphore_;
 }
 
 wayOut::wayOut() = default;
@@ -82,8 +80,13 @@ void wayOut::remove() {
 
 middleRoad::middleRoad() = default;
 
-middleRoad::middleRoad(wayOut west, wayOut east, wayOut front) {
+middleRoad::middleRoad(wayOut west, wayOut east, wayOut front, Semaphore semaphore) {
     west_ = west;
     east_ = east;
     front_ = front;
+    semaphore_ = semaphore;
+}
+
+Semaphore& middleRoad::getSemaphore() {
+    return semaphore_;
 }
