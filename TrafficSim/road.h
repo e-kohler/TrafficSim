@@ -8,12 +8,14 @@
 #include "vehicle.h"
 #include "../structures/linked_queue.h"
 
+using namespace structures;
+
 class Road {
  protected:
 	std::string name_;
 	int used_, size_;
 	int speed_;
-	structures::LinkedQueue<Vehicle> queue_;
+	LinkedQueue<Vehicle> queue_;
 
  public:
 	Road(int size, int speed, std::string name);

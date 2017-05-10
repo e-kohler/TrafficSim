@@ -16,7 +16,7 @@ bool Event::operator=(Event event) {
     return t_ == event.t_;
 }
 
-structures::LinkedList<Event>  Event::run(structures::LinkedList<Event> events) {
+LinkedList<Event>  Event::run(LinkedList<Event> events) {
     throw ("Não deve ser usado.");
 }
 
@@ -25,6 +25,7 @@ newVehicle::newVehicle() = default;
 newVehicle::newVehicle(int t, wayIn& road) {
 	t_ = t;
 	road_ = road;
+
 }
 
 /**
@@ -33,8 +34,8 @@ newVehicle::newVehicle(int t, wayIn& road) {
  * @param events Lista de eventos do sistema.
  * @return Lista de eventos atualizada.
  */
-structures::LinkedList<Event> newVehicle::run(structures::LinkedList<Event> events) {
-    int timeToLine = road_.getAvailable() / road_.getSpeed();
+LinkedList<Event> newVehicle::run(LinkedList<Event> events) {
+    int tieToLine = road_.getAvailable() / road_.getSpeed();
     Vehicle vehicle;
 	if(road_.fits(vehicle)) {
         events.insert_sorted((const Event &) new carInLine(t_ + timeToLine, road_, vehicle));
@@ -53,7 +54,7 @@ carInLine::carInLine(int t, wayIn& road, Vehicle& vehicle) {
     vehicle_ = vehicle;
 }
 
-structures::LinkedList<Event> carInLine::run(structures::LinkedList<Event> events) {
+LinkedList<Event> carInLine::run(LinkedList<Event> events) {
     road_.add(vehicle_);
     return events;
 }
@@ -70,7 +71,7 @@ changeSem::changeSem(int t, Semaphore& semaphore) {
  * @param events Lista de eventos do sistema.
  * @return Lista de eventos atualizada.
  */
-structures::LinkedList<Event> changeSem::run(structures::LinkedList<Event> events) {
+LinkedList<Event> changeSem::run(LinkedList<Event> events) {
     int nextChange = t_ + semaphore_.getFreq();
 	semaphore_.change();
     events.insert_sorted((const Event &) new changeSem(nextChange, semaphore_));
@@ -84,7 +85,7 @@ carInSem::carInSem(int t, Semaphore& semaphore, Vehicle& vehicle) {
 	vehicle_ = vehicle;
 }
 
-structures::LinkedList<Event> carInSem::run(structures::LinkedList<Event> events) {
+LinkedList<Event> carInSem::run(LinkedList<Event> events) {
 	float i = float((rand()/RAND_MAX));
     if(semaphore_.isOpen()) {
         if(i <= semaphore_.getProbEast()) {
@@ -106,7 +107,7 @@ changeRoad::changeRoad(int t, Road& road, Vehicle& vehicle) {
     vehicle_ = vehicle;
 }
 
-structures::LinkedList<Event> changeRoad::run(structures::LinkedList<Event> events) {
+LinkedList<Event> changeRoad::run(LinkedList<Event> events) {
 	//To do
 }
 
