@@ -1,6 +1,6 @@
 // Copyright 2017 Eduardo Kohler
 
-#ifndef STRUCTURES_ARRAY_LIST_H
+
 #define STRUCTURES_ARRAY_LIST_H
 
 #include <cstdint>  // std::size_t
@@ -259,4 +259,3 @@ const T& ArrayList<T>::operator[](std::size_t index) const {
 }
 }  // namespace structures
 
-#endif

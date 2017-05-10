@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <ctime>
 
+
 class Vehicle {
  private:
 	int size_;

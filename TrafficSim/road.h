@@ -45,15 +45,15 @@ class wayIn : Road {
 
 class wayOut : Road {
  public:
-	wayOut(int t) {
-        if (t == )
-    }
+	wayOut();
 };
 
 class middleRoad : Road {
  public:
  	middleRoad();
 };
+
+#endif
 
 
 

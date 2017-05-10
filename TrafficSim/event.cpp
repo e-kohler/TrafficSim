@@ -1,4 +1,5 @@
 #include "event.h"
+#include "road.h"
 
 Event::Event() = default;
 
@@ -88,10 +89,10 @@ carInSem::carInSem(int t, Semaphore& semaphore, Vehicle& vehicle) {
 LinkedList<Event> carInSem::run(LinkedList<Event> events) {
 	float i = float((rand()/RAND_MAX));
     if(semaphore_.isOpen()) {
-        if (i <= semaphore_.getProbEast()) {
-            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getSource(), semaphore_.getEast(), vehicle_));
-        } else if (i <= (semaphore_.getProbEast() + semaphore_.getProbWest()) && i > semaphore_.getProbEast()) {
-            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getSource(), semaphore_.getWest(), vehicle_));
+        if (i <= semaphore_.getProbLeft()) {
+            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getSource(), semaphore_.getLeft(), vehicle_));
+        } else if (i <= (semaphore_.getProbLeft() + semaphore_.getProbRight()) && i > semaphore_.getProbLeft()) {
+            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getSource(), semaphore_.getRight(), vehicle_));
         } else {
             events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getSource(), semaphore_.getFront(), vehicle_));
         }

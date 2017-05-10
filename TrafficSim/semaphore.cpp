@@ -2,17 +2,20 @@
 
 #include "semaphore.h"
 
+using namespace structures;
+
 Semaphore::Semaphore() = default;
 
-Semaphore::Semaphore(int freq, float probEast, float probWest, Road source, Road west, Road east, Road front) {
-    source_ = source;
-    west_ = west;
-    east_ = east;
-    front_ = front;
+Semaphore::Semaphore(int freq, float probLeft, float probRight, Road source, Road right, Road left, Road front) {
+    roads_ = ArrayList(4);
+    roads_.push_front(source);
+    roads_.push_front(front);
+    roads_.push_front(right);
+    roads_.push_front(left);
 	isOpen_ = false;
     freq_ = freq;
-    probEast_ = probEast;
-    probWest_ = probWest;
+    probLeft_ = probLeft;
+    probRight_ = probRight;
 }
 
 Semaphore::~Semaphore() {}
@@ -29,27 +32,27 @@ int Semaphore::getFreq() {
     return freq_;
 }
 
-float Semaphore::getProbWest() {
-    return probWest_;
+float Semaphore::getProbRight() {
+    return probRight_;
 }
 
-float Semaphore::getProbEast() {
-    return probEast_;
+float Semaphore::getProbLeft() {
+    return probLeft_;
 }
 
-Road& Semaphore::getEast() {
-    return east_;
+Road& Semaphore::getLeft() {
+    return roads_.at(0);
 }
 
-Road& Semaphore::getWest() {
-    return west_;
+Road& Semaphore::getRight() {
+    return roads_.at(1);
 }
 
 Road& Semaphore::getFront() {
-    return front_;
+    return roads_.at(2);
 }
 
 Road& Semaphore::getSource() {
-    return source_;
+    return roads_.at(3);
 }
 

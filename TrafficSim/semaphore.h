@@ -9,18 +9,20 @@
 #include "road.h"
 #include "semaphore.h"
 #include "../structures/linked_list.h"
+#include "../structures/array_list.h"
 #include "../structures/linked_queue.h"
 
+using namespace structures;
 
 class Semaphore {
  private:
 	bool isOpen_;
     int freq_;
-    float probEast_, probWest_;
-    Road source_, west_, east_, front_;
+    float probLeft_, probRight_;
+    ArrayList<Road> roads_;
 
  public:
-	Semaphore(int freq, float probEast, float probWest, Road source, Road west, Road east, Road front);
+	Semaphore(int freq, float probLeft, float probRight, Road source, Road right, Road left, Road front);
 
     Semaphore();
 
@@ -28,11 +30,11 @@ class Semaphore {
 	bool isOpen();
 	void change();
     int getFreq();
-    float getProbEast();
-    float getProbWest();
+    float getProbLeft();
+    float getProbRight();
     Road& getSource();
-    Road& getEast();
-    Road& getWest();
+    Road& getLeft();
+    Road& getRight();
     Road& getFront();
 };
 #endif
