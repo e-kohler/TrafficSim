@@ -31,7 +31,7 @@ class Road {
     Vehicle& last();
 };
 
-class wayIn : Road {
+class wayIn : public Road {
  private:
 	int freq_;
 
@@ -41,14 +41,14 @@ class wayIn : Road {
     int getFreq();
 };
 
-class wayOut : Road {
+class wayOut : public Road {
  public:
-	wayOut();
+	explicit wayOut();
 };
 
-class middleRoad : Road {
+class middleRoad : public Road {
  public:
- 	middleRoad();
+ 	explicit middleRoad();
 };
 
 #endif

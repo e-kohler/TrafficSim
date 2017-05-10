@@ -7,7 +7,7 @@ using namespace structures;
 Semaphore::Semaphore() = default;
 
 Semaphore::Semaphore(int freq, float probLeft, float probRight, Road source, Road right, Road left, Road front) {
-    roads_ = ArrayList(4);
+    roads_ = ArrayList<Road>(4);
     roads_.push_front(source);
     roads_.push_front(front);
     roads_.push_front(right);

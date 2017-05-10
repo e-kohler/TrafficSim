@@ -21,9 +21,10 @@ class Event {
 	Event();
 	Event(int t);
 	~Event();
-	bool operator>(Event event);
+    bool operator<(const Event& e) const;
+    bool operator>(const Event& e) const;
     bool operator=(Event event);
-	virtual LinkedList<Event> run(LinkedList<Event> events);  // Method that performs the actual event.
+	LinkedList<Event> run(LinkedList<Event> events);  // Method that performs the actual event.
 };
 /**
  * @brief New vehicle is added to a specific road.

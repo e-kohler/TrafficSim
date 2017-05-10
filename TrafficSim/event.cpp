@@ -9,8 +9,12 @@ Event::Event(int t) {
 
 Event::~Event() {}
 
-bool Event::operator>(Event event) {
-    return t_ > event.t_;
+bool Event::operator<(const Event& e) const {
+    return t_ < e.t_;
+}
+
+bool Event::operator>(const Event& e) const {
+    return t_ > e.t_;
 }
 
 bool Event::operator=(Event event) {
@@ -39,10 +43,10 @@ LinkedList<Event> newVehicle::run(LinkedList<Event> events) {
     int timeToLine = road_.getAvailable() / road_.getSpeed();
     Vehicle vehicle;
 	if(road_.fits(vehicle)) {
-        events.insert_sorted((const Event &) new carInLine(t_ + timeToLine, road_, vehicle));
+        events.insert_sorted((const Event &) *(new carInLine(t_ + timeToLine, road_, vehicle)));
     } else {
         std::cout << "Tentando nova adição na rua: " << road_.getName() << "em 3 segundos" << "\n";
-        events.insert_sorted((const Event &) new newVehicle(t_ + 3, road_));  // Caso não haja espaço, tenta de novo na frequencia da pista
+        events.insert_sorted((const Event &) *(new newVehicle(t_ + 3, road_)));  // Caso não haja espaço, tenta de novo na frequencia da pista
     }
     return events;
 }
@@ -75,7 +79,7 @@ changeSem::changeSem(int t, Semaphore& semaphore) {
 LinkedList<Event> changeSem::run(LinkedList<Event> events) {
     int nextChange = t_ + semaphore_.getFreq();
 	semaphore_.change();
-    events.insert_sorted((const Event &) new changeSem(nextChange, semaphore_));
+    events.insert_sorted((const Event &) *(new changeSem(nextChange, semaphore_)));
 }
 
 carInSem::carInSem() = default;
@@ -90,15 +94,15 @@ LinkedList<Event> carInSem::run(LinkedList<Event> events) {
 	float i = float((rand()/RAND_MAX));
     if(semaphore_.isOpen()) {
         if (i <= semaphore_.getProbLeft()) {
-            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getSource(), semaphore_.getLeft(), vehicle_));
+            events.insert_sorted((const Event &) *(new changeRoad(t_, semaphore_.getSource(), semaphore_.getLeft(), vehicle_)));
         } else if (i <= (semaphore_.getProbLeft() + semaphore_.getProbRight()) && i > semaphore_.getProbLeft()) {
-            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getSource(), semaphore_.getRight(), vehicle_));
+            events.insert_sorted((const Event &) *(new changeRoad(t_, semaphore_.getSource(), semaphore_.getRight(), vehicle_)));
         } else {
-            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getSource(), semaphore_.getFront(), vehicle_));
+            events.insert_sorted((const Event &) *(new changeRoad(t_, semaphore_.getSource(), semaphore_.getFront(), vehicle_)));
         }
         return events;
     } else {
-        events.insert_sorted((const Event &) new carInSem(t_+1, semaphore_, vehicle_));
+        events.insert_sorted((const Event &) *(new carInSem(t_+1, semaphore_, vehicle_)));
         return events;
     }
 }
@@ -114,7 +118,7 @@ changeRoad::changeRoad(int t, Road& roadFrom, Road& roadTo, Vehicle& vehicle) {
 
 LinkedList<Event> changeRoad::run(LinkedList<Event> events) {
     if (roadTo_.getAvailable() == 0) {
-        changeRoad(t+1, roadFrom_, roadTo_, vehicle_)
+        changeRoad(t_+1, roadFrom_, roadTo_, vehicle_);
     } else {
         roadFrom_.pop();
         vehicle_.setSpeed(roadTo_.getSpeed());

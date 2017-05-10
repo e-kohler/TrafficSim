@@ -191,7 +191,7 @@ void LinkedList<T>::insert_sorted(const T& data) {
   } else {
     current = head;
     std::size_t pos;
-    for (pos = 0; pos < size() && data.operator>(current->data()); pos++) {
+    for (pos = 0; pos < size() && data > current->data(); pos++) {
       current = current->next();
     }
     insert(data, pos);
