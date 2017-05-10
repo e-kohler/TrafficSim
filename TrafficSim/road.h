@@ -32,13 +32,12 @@ class Road {
 class wayIn : Road {
  private:
 	Semaphore semaphore_;
-	wayOut east_, west_;
 	middleRoad front_;
 	int freq_;
 
  public:
     wayIn();
-	wayIn(int freq, wayOut west, wayOut east, middleRoad front, Semaphore semaphore);
+	wayIn(int freq, Semaphore semaphore);
     int getFreq();
 	Semaphore& getSemaphore();
 
@@ -53,12 +52,11 @@ class wayOut : Road {
 class middleRoad : Road {
 private:
 	Semaphore semaphore_;
-	wayOut west_, east_, front_;
 	Semaphore& getSemaphore();
 
 public:
 	middleRoad();
-	middleRoad(wayOut west, wayOut east, wayOut front, Semaphore semaphore);
+	middleRoad(Semaphore semaphore);
 };
 
 

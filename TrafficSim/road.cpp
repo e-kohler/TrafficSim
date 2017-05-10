@@ -53,10 +53,7 @@ Vehicle& Road::last() {
 
 wayIn::wayIn() = default;
 
-wayIn::wayIn(int freq, wayOut west, wayOut east, middleRoad front, Semaphore semaphore) {
-    west_ = west;
-    east_ = east;
-    front_ = front;
+wayIn::wayIn(int freq, Semaphore semaphore) {
 	freq_ = freq;
     semaphore_ = semaphore;
 }
@@ -80,10 +77,7 @@ void wayOut::remove() {
 
 middleRoad::middleRoad() = default;
 
-middleRoad::middleRoad(wayOut west, wayOut east, wayOut front, Semaphore semaphore) {
-    west_ = west;
-    east_ = east;
-    front_ = front;
+middleRoad::middleRoad(Semaphore semaphore) {
     semaphore_ = semaphore;
 }
 

@@ -4,7 +4,10 @@
 
 Semaphore::Semaphore() = default;
 
-Semaphore::Semaphore(int freq, float probEast, float probWest) {
+Semaphore::Semaphore(int freq, float probEast, float probWest, Road west, Road east, Road front) {
+    west_ = west;
+    east_ = east;
+    front_ = front;
 	isOpen_ = false;
     freq_ = freq;
     probEast_ = probEast;
@@ -25,11 +28,23 @@ int Semaphore::getFreq() {
     return freq_;
 }
 
-float Semaphore::getWest() {
+float Semaphore::getProbWest() {
     return probWest_;
 }
 
-float Semaphore::getEast() {
+float Semaphore::getProbEast() {
     return probEast_;
+}
+
+Road& Semaphore::getEast() {
+    return east_;
+}
+
+Road& Semaphore::getWest() {
+    return west_;
+}
+
+Road& Semaphore::getFront() {
+    return front_;
 }
 

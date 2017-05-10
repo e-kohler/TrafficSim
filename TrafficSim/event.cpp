@@ -87,7 +87,14 @@ carInSem::carInSem(int t, Semaphore& semaphore, Vehicle& vehicle) {
 structures::LinkedList<Event> carInSem::run(structures::LinkedList<Event> events) {
 	float i = float((rand()/RAND_MAX));
     if(semaphore_.isOpen()) {
-        if(i < )
+        if(i <= semaphore_.getProbEast()) {
+            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getEast(), vehicle_));
+        } else if (i <= (semaphore_.getProbEast() + semaphore_.getProbWest() && i > semaphore_.getProbEast())) {
+            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getWest(), vehicle_));
+        } else {
+            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getFront(), vehicle_));
+        }
+        return events;
     }
 }
 
