@@ -35,7 +35,7 @@ newVehicle::newVehicle(int t, wayIn& road) {
  * @return Lista de eventos atualizada.
  */
 LinkedList<Event> newVehicle::run(LinkedList<Event> events) {
-    int tieToLine = road_.getAvailable() / road_.getSpeed();
+    int timeToLine = road_.getAvailable() / road_.getSpeed();
     Vehicle vehicle;
 	if(road_.fits(vehicle)) {
         events.insert_sorted((const Event &) new carInLine(t_ + timeToLine, road_, vehicle));
