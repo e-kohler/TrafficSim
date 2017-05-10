@@ -89,11 +89,11 @@ LinkedList<Event> carInSem::run(LinkedList<Event> events) {
 	float i = float((rand()/RAND_MAX));
     if(semaphore_.isOpen()) {
         if (i <= semaphore_.getProbEast()) {
-            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getEast(), vehicle_));
+            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getSource(), semaphore_.getEast(), vehicle_));
         } else if (i <= (semaphore_.getProbEast() + semaphore_.getProbWest()) && i > semaphore_.getProbEast()) {
-            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getWest(), vehicle_));
+            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getSource(), semaphore_.getWest(), vehicle_));
         } else {
-            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getFront(), vehicle_));
+            events.insert_sorted((const Event &) new changeRoad(t_, semaphore_.getSource(), semaphore_.getFront(), vehicle_));
         }
         return events;
     } else {
@@ -104,14 +104,16 @@ LinkedList<Event> carInSem::run(LinkedList<Event> events) {
 
 changeRoad::changeRoad() = default;
 
-changeRoad::changeRoad(int t, Road& road, Vehicle& vehicle) {
+changeRoad::changeRoad(int t, Road& roadFrom, Road& roadTo, Vehicle& vehicle) {
 	t_ = t;
-    road_ = road;
+    roadFrom_ = roadFrom;
+    roadTo_ = roadTo;
     vehicle_ = vehicle;
 }
 
 LinkedList<Event> changeRoad::run(LinkedList<Event> events) {
-
+    roadTo_.add(vehicle_);    ////////////INCOMPLETO
+    roadFrom_.pop();
 }
 
 

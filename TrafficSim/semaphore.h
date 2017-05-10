@@ -17,10 +17,10 @@ class Semaphore {
 	bool isOpen_;
     int freq_;
     float probEast_, probWest_;
-    Road west_, east_, front_;
+    Road source_, west_, east_, front_;
 
  public:
-	Semaphore(int freq, float probEast, float probWest, Road west, Road east, Road front);
+	Semaphore(int freq, float probEast, float probWest, Road source, Road west, Road east, Road front);
 
     Semaphore();
 
@@ -30,6 +30,7 @@ class Semaphore {
     int getFreq();
     float getProbEast();
     float getProbWest();
+    Road& getSource();
     Road& getEast();
     Road& getWest();
     Road& getFront();

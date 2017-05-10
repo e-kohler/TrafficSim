@@ -81,11 +81,11 @@ class carInSem : Event {
  */
 class changeRoad : Event {
  private:
-	Road road_;
+	Road roadFrom_, roadTo_;
 	Vehicle vehicle_;
  public:
     changeRoad();
-	changeRoad(int t, Road& road, Vehicle& vehicle);
+	changeRoad(int t, Road& roadFrom, Road& roadTo, Vehicle& vehicle);
 	LinkedList<Event> run(LinkedList<Event> events);
 };
 #endif

@@ -23,6 +23,11 @@ void Road::add(Vehicle& vehicle) {
     }
 }
 
+void Road::pop() {
+    used_ -= queue_.front().getSize();
+    queue_.dequeue();
+}
+
 bool Road::fits(Vehicle& vehicle) {
     return vehicle.getSize() <= getAvailable();
 }
@@ -53,34 +58,19 @@ Vehicle& Road::last() {
 
 wayIn::wayIn() = default;
 
-wayIn::wayIn(int freq, Semaphore semaphore) {
+wayIn::wayIn(int freq) {
 	freq_ = freq;
-    semaphore_ = semaphore;
 }
 
 int wayIn::getFreq() {
     return freq_;
 }
 
-Semaphore& wayIn::getSemaphore() {
-    return semaphore_;
-}
-
 wayOut::wayOut() = default;
 
 wayOut::wayOut() {}
 
-void wayOut::remove() {
-    used_ -= queue_.front().getSize();
-    queue_.dequeue();
-}
-
 middleRoad::middleRoad() = default;
 
-middleRoad::middleRoad(Semaphore semaphore) {
-    semaphore_ = semaphore;
-}
 
-Semaphore& middleRoad::getSemaphore() {
-    return semaphore_;
-}
+

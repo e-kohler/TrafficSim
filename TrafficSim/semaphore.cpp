@@ -4,7 +4,8 @@
 
 Semaphore::Semaphore() = default;
 
-Semaphore::Semaphore(int freq, float probEast, float probWest, Road west, Road east, Road front) {
+Semaphore::Semaphore(int freq, float probEast, float probWest, Road source, Road west, Road east, Road front) {
+    source_ = source;
     west_ = west;
     east_ = east;
     front_ = front;
@@ -46,5 +47,9 @@ Road& Semaphore::getWest() {
 
 Road& Semaphore::getFront() {
     return front_;
+}
+
+Road& Semaphore::getSource() {
+    return source_;
 }
 

@@ -22,6 +22,7 @@ class Road {
     Road();
     ~Road();
 	void add(Vehicle& vehicle);
+	void pop();
 	bool fits(Vehicle& vehicle);
 	int getSize();
 	int getSpeed();
@@ -39,26 +40,20 @@ class wayIn : Road {
 
  public:
     wayIn();
-	wayIn(int freq, Semaphore semaphore);
+	wayIn(int freq);
     int getFreq();
-	Semaphore& getSemaphore();
-
 };
 
 class wayOut : Road {
  public:
 	wayOut();
-	void remove();
 };
 
 class middleRoad : Road {
-private:
-	Semaphore semaphore_;
-	Semaphore& getSemaphore();
+ private:
 
-public:
-	middleRoad();
-	middleRoad(Semaphore semaphore);
+ public:
+ 	middleRoad();
 };
 
 
