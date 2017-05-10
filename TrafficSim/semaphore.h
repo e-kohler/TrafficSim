@@ -14,28 +14,29 @@
 using namespace structures;
 
 class Semaphore {
- private:
+private:
 	bool isOpen_;
-    int freq_;
-    int nextChange_;
-    float probLeft_, probRight_;
-    ArrayList<Road> roads_;
+	int freq_;
+	int nextOpenTime_, nextCloseTime_;
+	float probLeft_, probRight_;
+	ArrayList<Road> roads_;
 
- public:
+public:
 	Semaphore(int freq, float probLeft, float probRight, Road source, Road right, Road left, Road front);
 
-    Semaphore();
+	Semaphore();
 
-    ~Semaphore();
+	~Semaphore();
 	bool isOpen();
-	void change();
-    int getFreq();
-    int getNextChange();
-    float getProbLeft();
-    float getProbRight();
-    Road& getSource();
-    Road& getLeft();
-    Road& getRight();
-    Road& getFront();
+	void change(int t);
+	int getFreq();
+	int getNextOpenTime();
+	int getNextCloseTime();
+	float getProbLeft();
+	float getProbRight();
+	Road& getSource();
+	Road& getLeft();
+	Road& getRight();
+	Road& getFront();
 };
 #endif
