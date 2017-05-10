@@ -44,6 +44,8 @@ class wayIn : public Road {
 
 class wayOut : public Road {
  public:
+    int size_;
+    int speed;
 	explicit wayOut(int size, int speed);
 };
 

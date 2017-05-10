@@ -67,6 +67,10 @@ int wayIn::getFreq() {
     return (int)(((rand()/RAND_MAX) * ((max_ - min_)+1)) + min_);
 }
 
+wayOut::wayOut(int size, int speed) {
+        size_ = size;
+        speed_ = speed;
+}
 
 middleRoad::middleRoad() = default;
 
