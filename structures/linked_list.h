@@ -5,6 +5,7 @@
 
 #include <cstdint>    // std::size_t
 #include <stdexcept>  // C++ Exceptions
+#include "../TrafficSim/event.h"
 
 namespace structures {
 /**
@@ -16,7 +17,7 @@ class LinkedList {
   LinkedList();
   ~LinkedList();
   void clear();
-  void push_back(const T& data);
+  void push_back(newVehicle *data);
   void push_front(const T& data);
   void insert(const T& data, std::size_t index);
   void insert_sorted(const T& data);

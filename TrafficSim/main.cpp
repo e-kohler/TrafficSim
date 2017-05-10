@@ -1,9 +1,6 @@
 #include <iostream>
-#include <stdlib.h>
-#include <time.h>
+#include "event.h"
 
-#include "road.h"
-#include "semaphore.h"
 
 int main () {
     int texec = 30;
@@ -24,6 +21,8 @@ int main () {
     Semaphore* C1 = new Semaphore(freq, 0.4, 0.3, *(C1leste), *(N1norte), *(S1sul), *(O1oeste));
     Semaphore* N1 = new Semaphore(freq, 0.8, 0.1, *(N1sul), *(O1oeste), *(C1leste), *(S1sul));
 
+    LinkedList<Event> events;
+    events.push_back(new newVehicle(2, *O1leste));
 
 
 	return 0;
