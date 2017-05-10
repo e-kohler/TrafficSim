@@ -13,6 +13,8 @@
  * @brief Class that specifies certain events.
  */
 
+using namespace structures;
+
 class Event {
  protected:
 	int t_ = 0;  // Event time
@@ -28,7 +30,7 @@ class Event {
 /**
  * @brief New vehicle is added to a specific road.
  */
-class newVehicle : Event {
+class newVehicle : public Event {
  private:
 	wayIn road_;
 
@@ -38,7 +40,7 @@ class newVehicle : Event {
     LinkedList<Event> run(LinkedList<Event> events);
 };
 
-class carInLine : Event {
+class carInLine : public Event {
 private:
 	wayIn road_;
 	Vehicle vehicle_;
@@ -53,7 +55,7 @@ public:
 /**
  * @brief When a semaphore changes its state.
  */
-class changeSem : Event {
+class changeSem : public Event {
  private:
 	Semaphore semaphore_;
 
@@ -65,7 +67,7 @@ class changeSem : Event {
 /**
  * @brief When a vehicle waits for a semaphore.
  */
-class carInSem : Event {
+class carInSem : public Event {
  private:
 	Semaphore semaphore_;
 	Vehicle vehicle_;
@@ -78,7 +80,7 @@ class carInSem : Event {
 /**
  * @brief When a vehicle moves to another road.
  */
-class changeRoad : Event {
+class changeRoad : public Event {
  private:
 	Road roadFrom_, roadTo_;
 	Vehicle vehicle_;

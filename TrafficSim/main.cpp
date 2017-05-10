@@ -22,7 +22,7 @@ int main () {
     Semaphore* N1 = new Semaphore(freq, 0.8, 0.1, *(N1sul), *(O1oeste), *(C1leste), *(S1sul));
 
     LinkedList<Event> events;
-    events.push_back(new newVehicle(2, (Road &) O1leste));
+    events.push_back(*new newVehicle(2, *(O1leste)));
 
 
 	return 0;

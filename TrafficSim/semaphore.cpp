@@ -27,7 +27,7 @@ bool Semaphore::isOpen() {
 }
 
 void Semaphore::change(int t) {
-    if (isOpen) {
+    if (isOpen_) {
         nextOpenTime_ = t + (freq_ - freq_/4);
     } else {
         nextCloseTime_ = t + freq_/4;
