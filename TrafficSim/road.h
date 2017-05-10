@@ -38,13 +38,13 @@ class wayIn : public Road {
 
  public:
     wayIn();
-	wayIn(int min, int max);
+	wayIn(int size, int speed, std::string name, int min, int max);
     int getFreq();
 };
 
 class wayOut : public Road {
  public:
-	explicit wayOut();
+	explicit wayOut(int size, int speed);
 };
 
 class middleRoad : public Road {
