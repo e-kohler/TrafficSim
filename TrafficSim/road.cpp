@@ -58,12 +58,13 @@ Vehicle& Road::last() {
 
 wayIn::wayIn() = default;
 
-wayIn::wayIn(int freq) {
-	freq_ = freq;
+wayIn::wayIn(int min, int max) {
+	min_ = min;
+    max_ = max;
 }
 
 int wayIn::getFreq() {
-    return freq_;
+    return (int)(((rand()/RAND_MAX) * ((max_ - min_)+1)) + min_);
 }
 
 wayOut::wayOut() = default;

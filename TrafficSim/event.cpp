@@ -44,9 +44,10 @@ LinkedList<Event> newVehicle::run(LinkedList<Event> events) {
     Vehicle vehicle;
 	if(road_.fits(vehicle)) {
         events.insert_sorted((const Event &) *(new carInLine(t_ + timeToLine, road_, vehicle)));
+        events.insert_sorted((const Event &) *(new newVehicle((t_ + road_.getFreq()), road_)));
     } else {
         std::cout << "Tentando nova adição na rua: " << road_.getName() << "em 3 segundos" << "\n";
-        events.insert_sorted((const Event &) *(new newVehicle(t_ + 3, road_)));  // Caso não haja espaço, tenta de novo na frequencia da pista
+        events.insert_sorted((const Event &) *(new newVehicle(t_ + road_.getFreq(), road_)));  // Caso não haja espaço, tenta de novo na frequencia da pista
     }
     return events;
 }

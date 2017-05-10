@@ -33,11 +33,12 @@ class Road {
 
 class wayIn : public Road {
  private:
-	int freq_;
+    int min_;
+	int max_;
 
  public:
     wayIn();
-	wayIn(int freq);
+	wayIn(int min, int max);
     int getFreq();
 };
 
