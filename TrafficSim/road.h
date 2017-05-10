@@ -34,8 +34,6 @@ class Road {
 
 class wayIn : Road {
  private:
-	Semaphore semaphore_;
-	middleRoad front_;
 	int freq_;
 
  public:
@@ -50,8 +48,6 @@ class wayOut : Road {
 };
 
 class middleRoad : Road {
- private:
-
  public:
  	middleRoad();
 };
