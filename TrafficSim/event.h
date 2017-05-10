@@ -34,7 +34,7 @@ class newVehicle : Event {
 
  public:
     newVehicle();
-	newVehicle(int t, wayIn& road);
+	newVehicle(int t, wayIn &road);
     LinkedList<Event> run(LinkedList<Event> events);
 };
 
