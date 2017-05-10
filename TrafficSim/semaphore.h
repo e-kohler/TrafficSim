@@ -7,7 +7,6 @@
 #include <cstdint>
 #include <stdlib.h>
 #include "road.h"
-#include "semaphore.h"
 #include "../structures/linked_list.h"
 #include "../structures/array_list.h"
 #include "../structures/linked_queue.h"

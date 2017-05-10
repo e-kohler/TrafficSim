@@ -4,10 +4,8 @@
 #define ROAD_H
 
 #include <iostream>
-#include "semaphore.h"
 #include "vehicle.h"
 #include "../structures/linked_queue.h"
-#include "event.h"
 
 using namespace structures;
 

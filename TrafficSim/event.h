@@ -5,7 +5,6 @@
 
 #include <cstdint>
 #include <stdlib.h>
-#include "vehicle.h"
 #include "road.h"
 #include "semaphore.h"
 #include "../structures/linked_list.h"
