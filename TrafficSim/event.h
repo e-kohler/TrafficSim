@@ -14,8 +14,6 @@
  * @brief Class that specifies certain events.
  */
 
-using namespace structures;
-
 class Event {
  protected:
 	int t_ = 0;  // Event time
