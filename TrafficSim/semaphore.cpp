@@ -16,6 +16,7 @@ Semaphore::Semaphore(int freq, float probLeft, float probRight, Road source, Roa
     freq_ = freq;
     probLeft_ = probLeft;
     probRight_ = probRight;
+    nextChange_ = 0;
 }
 
 Semaphore::~Semaphore() {}
@@ -26,10 +27,15 @@ bool Semaphore::isOpen() {
 
 void Semaphore::change() {
 	isOpen_ = !isOpen_;
+    nextChange_ += getFreq();
 }
 
 int Semaphore::getFreq() {
     return freq_;
+}
+
+int Semaphore::getNextChange() {
+    return nextChange_;
 }
 
 float Semaphore::getProbRight() {

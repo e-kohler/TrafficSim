@@ -17,6 +17,7 @@ class Semaphore {
  private:
 	bool isOpen_;
     int freq_;
+    int nextChange_;
     float probLeft_, probRight_;
     ArrayList<Road> roads_;
 
@@ -29,6 +30,7 @@ class Semaphore {
 	bool isOpen();
 	void change();
     int getFreq();
+    int getNextChange();
     float getProbLeft();
     float getProbRight();
     Road& getSource();
