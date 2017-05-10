@@ -10,6 +10,7 @@
 
 class Road {
  protected:
+	std::string name_;
 	int used_, size_;
 	int speed_;
 	double probEast_, probWest_;
@@ -17,13 +18,14 @@ class Road {
     Semaphore semaphore_;
 
  public:
-	Road(int size, int speed, double probWest, double probEast, Semaphore& semaphore);
+	Road(int size, int speed, double probWest, double probEast, Semaphore& semaphore, std::string name);
     Road();
     ~Road();
 	bool add(const Vehicle& vehicle);
 	int getSize();
 	int getSpeed();
     int getAvailable();
+	std::string getName();
 	bool isEmpty();
     Semaphore& getSemaphore();
     Vehicle& last();
@@ -31,11 +33,13 @@ class Road {
 
 class wayIn : Road {
  private:
+	wayOut east_, west_;
+	middleRoad front_;
 	int freq_;
 
  public:
     wayIn();
-	wayIn(int freq);
+	wayIn(int freq, wayOut west, wayOut east, middleRoad front);
     int getFreq();
 };
 
@@ -45,6 +49,14 @@ class wayOut : Road {
 	void remove();
 };
 
+class middleRoad : Road {
+private:
+	wayOut west_, east_, front_;
+
+public:
+	middleRoad();
+	middleRoad(wayOut west, wayOut east, wayOut front);
+};
 
 
 

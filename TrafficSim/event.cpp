@@ -17,7 +17,7 @@ bool Event::operator=(Event event) {
 }
 
 structures::LinkedList<Event>  Event::run(structures::LinkedList<Event> events) {
-    throw ("Não serve pra nada, que nem você");
+    throw ("Não deve ser usado.");
 }
 
 newVehicle::newVehicle() = default;
@@ -34,10 +34,12 @@ newVehicle::newVehicle(int t, wayIn& road) {
  * @return Lista de eventos atualizada.
  */
 structures::LinkedList<Event> newVehicle::run(structures::LinkedList<Event> events) {
-    int timeInRoad = road_.getSize() / road_.getSpeed();
     Vehicle vehicle;
 	if(road_.add(vehicle)) {
         events.insert_sorted((const Event &) new newVehicle(t_ + road_.getFreq(), road_));
+    } else {
+        std::cout << "Tentando nova adição na rua: " << road_.getName() << "em 3 segundos" << "\n";
+        events.insert_sorted((const Event &) new newVehicle(t_ + 3, road_));  // Caso não haja espaço, tenta de novo em 3 segs.
     }
     return events;
 }

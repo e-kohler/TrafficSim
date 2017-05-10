@@ -4,23 +4,26 @@
 
 Road::Road()  = default;
 
-Road::Road(int size, int speed, double probWest, double probEast, Semaphore& semaphore) {
+Road::Road(int size, int speed, double probWest, double probEast, Semaphore& semaphore, std::string name) {
 	used_ = 0;
 	size_ = size;
     semaphore_ = semaphore;
 	speed_ = speed;
 	probWest_ = probWest;
 	probEast_ = probEast;
+    name_ = name;
 }
 
 Road::~Road() {}
 
 bool Road::add(const Vehicle& vehicle) {
 	if(used_ + vehicle.getSize() > size_) {
+        std::cout << "Novo carro não cabe na rua: " << getName() << "\n";
         return false;
 	} else {
         queue_.enqueue(vehicle);
         used_ += vehicle.getSize();
+        std::cout << "Carro adicionado à rua: " << getName() << "\n";
         return true;
     }
 }
@@ -38,6 +41,10 @@ int Road::getAvailable() {
     return size_ - used_;
 }
 
+std::string Road::getName() {
+    return name_;
+}
+
 bool Road::isEmpty() {
 	return queue_.empty();
 }
@@ -52,7 +59,10 @@ Vehicle& Road::last() {
 
 wayIn::wayIn() = default;
 
-wayIn::wayIn(int freq) {
+wayIn::wayIn(int freq, wayOut west, wayOut east, middleRoad front) {
+    west_ = west;
+    east_ = east;
+    front_ = front;
 	freq_ = freq;
 }
 
@@ -69,6 +79,10 @@ void wayOut::remove() {
     queue_.dequeue();
 }
 
+middleRoad::middleRoad() = default;
 
-
-
+middleRoad::middleRoad(wayOut west, wayOut east, wayOut front) {
+    west_ = west;
+    east_ = east;
+    front_ = front;
+}
