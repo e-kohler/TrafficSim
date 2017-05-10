@@ -21,7 +21,8 @@ class Road {
 	Road(int size, int speed, double probWest, double probEast, Semaphore& semaphore, std::string name);
     Road();
     ~Road();
-	bool add(const Vehicle& vehicle);
+	void add(Vehicle& vehicle);
+	bool fits(Vehicle& vehicle);
 	int getSize();
 	int getSpeed();
     int getAvailable();

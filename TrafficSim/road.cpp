@@ -16,18 +16,19 @@ Road::Road(int size, int speed, double probWest, double probEast, Semaphore& sem
 
 Road::~Road() {}
 
-bool Road::add(const Vehicle& vehicle) {
-	if(used_ + vehicle.getSize() > size_) {
+void Road::add(Vehicle& vehicle) {
+	if(!fits(vehicle)) {
         std::cout << "Novo carro não cabe na rua: " << getName() << "\n";
-        return false;
 	} else {
         queue_.enqueue(vehicle);
         used_ += vehicle.getSize();
         std::cout << "Carro adicionado à rua: " << getName() << "\n";
-        return true;
     }
 }
 
+bool Road::fits(Vehicle& vehicle) {
+    return vehicle.getSize() <= getAvailable();
+}
 
 int Road::getSize() {
 	return size_;

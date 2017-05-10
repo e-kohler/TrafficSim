@@ -37,6 +37,17 @@ class newVehicle : Event {
 	newVehicle(int t, wayIn& road);
     structures::LinkedList<Event> run(structures::LinkedList<Event> events);
 };
+
+class carInLine : Event {
+private:
+	wayIn road_;
+	Vehicle vehicle_;
+public:
+	carInLine();
+	carInLine(int t, wayIn& road, Vehicle& vehicle);
+	structures::LinkedList<Event> run(structures::LinkedList<Event> events);
+};
+
 /**
  * @brief When a semaphore changes its state.
  */
