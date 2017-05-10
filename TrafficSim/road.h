@@ -7,6 +7,7 @@
 #include "semaphore.h"
 #include "vehicle.h"
 #include "../structures/linked_queue.h"
+#include "event.h"
 
 using namespace structures;
 
@@ -44,7 +45,9 @@ class wayIn : Road {
 
 class wayOut : Road {
  public:
-	wayOut();
+	wayOut(int t) {
+        if (t == )
+    }
 };
 
 class middleRoad : Road {

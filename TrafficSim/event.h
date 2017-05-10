@@ -51,6 +51,8 @@ public:
 	LinkedList<Event> run(LinkedList<Event> events);
 };
 
+
+
 /**
  * @brief When a semaphore changes its state.
  */
@@ -88,4 +90,5 @@ class changeRoad : Event {
 	changeRoad(int t, Road& roadFrom, Road& roadTo, Vehicle& vehicle);
 	LinkedList<Event> run(LinkedList<Event> events);
 };
+
 #endif

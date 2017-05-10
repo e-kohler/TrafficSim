@@ -16,3 +16,7 @@ Vehicle::~Vehicle() {}
 int Vehicle::getSize() const {
 	return size_;
 }
+
+void Vehicle::setSpeed(int speed) {
+    speed_ = speed;
+}

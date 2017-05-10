@@ -9,10 +9,12 @@
 class Vehicle {
  private:
 	int size_;
+    int speed_;
 
  public:
 	Vehicle();
 	~Vehicle();
 	int getSize() const;
+    void setSpeed(int speed);
 };
 #endif

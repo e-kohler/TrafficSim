@@ -70,6 +70,7 @@ wayOut::wayOut() = default;
 
 wayOut::wayOut() {}
 
+
 middleRoad::middleRoad() = default;
 
 
