@@ -52,8 +52,8 @@ bool Road::isEmpty() {
 	return queue_.empty();
 }
 
-Vehicle& Road::last() {
-    return queue_.back();
+Vehicle& Road::getFirst() {
+    return queue_.front();
 }
 
 wayIn::wayIn() = default;
@@ -68,11 +68,14 @@ int wayIn::getFreq() {
 }
 
 wayOut::wayOut(int size, int speed) {
-        size_ = size;
-        speed_ = speed;
+    size_ = size;
+    speed_ = speed;
 }
 
-middleRoad::middleRoad() = default;
+middleRoad::middleRoad(int size, int speed) {
+    size_ = size;
+    speed_ = speed;
+}
 
 
 

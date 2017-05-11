@@ -33,10 +33,11 @@ class Event {
 class newVehicle : public Event {
  private:
 	wayIn road_;
+	Semaphore semaphore_;
 
  public:
     newVehicle();
-	newVehicle(int t, wayIn &road);
+	newVehicle(int t, wayIn &road, Semaphore& semaphore);
     LinkedList<Event> run(LinkedList<Event> events);
 };
 
@@ -44,9 +45,10 @@ class carInLine : public Event {
 private:
 	wayIn road_;
 	Vehicle vehicle_;
+	Semaphore semaphore_;
 public:
 	carInLine();
-	carInLine(int t, wayIn& road, Vehicle& vehicle);
+	carInLine(int t, wayIn& road, Vehicle& vehicle, Semaphore& semaphore);
 	LinkedList<Event> run(LinkedList<Event> events);
 };
 
@@ -84,9 +86,10 @@ class changeRoad : public Event {
  private:
 	Road roadFrom_, roadTo_;
 	Vehicle vehicle_;
+	Semaphore semaphore_;
  public:
     changeRoad();
-	changeRoad(int t, Road& roadFrom, Road& roadTo, Vehicle& vehicle);
+	changeRoad(int t, Road& roadFrom, Road& roadTo, Vehicle& vehicle, Semaphore& semaphore);
 	LinkedList<Event> run(LinkedList<Event> events);
 };
 

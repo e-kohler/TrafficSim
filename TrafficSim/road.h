@@ -28,7 +28,7 @@ class Road {
     int getAvailable();
 	std::string getName();
 	bool isEmpty();
-    Vehicle& last();
+    Vehicle& getFirst();
 };
 
 class wayIn : public Road {
@@ -44,14 +44,12 @@ class wayIn : public Road {
 
 class wayOut : public Road {
  public:
-    int size_;
-    int speed;
 	explicit wayOut(int size, int speed);
 };
 
 class middleRoad : public Road {
  public:
- 	explicit middleRoad();
+ 	middleRoad(int size, int speed);
 };
 
 #endif
