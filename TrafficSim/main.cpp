@@ -37,6 +37,8 @@ int main () {
 
 
     LinkedList<Event*> events;
+
+
     events.push_back(new newVehicle(0, *(O1leste), *O1));
     events.push_back(new newVehicle(0, *(S1norte), *S1));
     events.push_back(new newVehicle(0, *(N1sul), *N1));

@@ -14,7 +14,6 @@ class Vehicle {
 
  public:
 	Vehicle();
-	~Vehicle();
 	int getSize() const;
     void setSpeed(int speed);
 };

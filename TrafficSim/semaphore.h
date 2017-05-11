@@ -22,7 +22,7 @@ private:
 	ArrayList<Road> roads_;
 
 public:
-	Semaphore(int freq, float probLeft, float probRight, Road source, Road right, Road left, Road front);
+	Semaphore(int freq, float probLeft, float probRight, Road& source, Road& right, Road& left, Road& front);
 
 	Semaphore();
 
