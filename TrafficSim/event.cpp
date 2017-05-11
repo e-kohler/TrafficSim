@@ -15,16 +15,12 @@ bool Event::operator>(const Event& e) const {
     return t_ > e.t_;
 }
 
-bool Event::operator=(Event event) {
-    return t_ == event.t_;
+bool Event::operator=(const Event& e) const {
+    return t_ == e.t_;
 }
 
 int Event::getTime() {
     return t_;
-}
-
-LinkedList<Event>  Event::run(LinkedList<Event> events) {
-
 }
 
 newVehicle::newVehicle() = default;
@@ -41,15 +37,15 @@ newVehicle::newVehicle(int t, wayIn& road, Semaphore& semaphore) {
  * @param events Lista de eventos do sistema.
  * @return Lista de eventos atualizada.
  */
-LinkedList<Event> newVehicle::run(LinkedList<Event> events) {
-    int timeToLine = road_.getAvailable() / road_.getSpeed();
+LinkedList<Event*> newVehicle::run(LinkedList<Event*> events) {
+    int timeToLine = 1;
     Vehicle vehicle;
 	if(road_.fits(vehicle)) {
-        events.insert_sorted(carInLine(t_ + timeToLine, road_, vehicle, semaphore_));
-        events.insert_sorted(newVehicle((t_ + road_.getFreq()), road_, semaphore_));
+        events.insert_sorted(new carInLine(t_ + timeToLine, road_, vehicle, semaphore_));
+        events.insert_sorted(new newVehicle((t_ + road_.getFreq()), road_, semaphore_));
     } else {
         std::cout << "Tentando nova adição na rua: " << road_.getName() << "em 3 segundos" << "\n";
-        events.insert_sorted(newVehicle(t_ + road_.getFreq(), road_, semaphore_));
+        events.insert_sorted(new newVehicle(t_ + road_.getFreq(), road_, semaphore_));
         // Caso não haja espaço, tenta de novo na frequencia da pista
     }
     return events;
@@ -64,8 +60,8 @@ carInLine::carInLine(int t, wayIn& road, Vehicle& vehicle, Semaphore& semaphore)
     semaphore_ = semaphore;
 }
 
-LinkedList<Event> carInLine::run(LinkedList<Event> events) {
-    events.insert_sorted(carInSem(t_, semaphore_, road_.getFirst()));
+LinkedList<Event*> carInLine::run(LinkedList<Event*> events) {
+    events.insert_sorted(new carInSem(t_, semaphore_, road_.getFirst()));
     road_.add(vehicle_);
     return events;
 }
@@ -82,13 +78,13 @@ changeSem::changeSem(int t, Semaphore& semaphore) {
  * @param events Lista de eventos do sistema.
  * @return Lista de eventos atualizada.
  */
-LinkedList<Event> changeSem::run(LinkedList<Event> events) {
+LinkedList<Event*> changeSem::run(LinkedList<Event*> events) {
     if (semaphore_.isOpen()) {
         semaphore_.change(t_);
-        events.insert_sorted(changeSem(semaphore_.getNextCloseTime(), semaphore_));
+        events.insert_sorted(new changeSem(semaphore_.getNextCloseTime(), semaphore_));
     } else {
         semaphore_.change(t_);
-        events.insert_sorted(changeSem(semaphore_.getNextOpenTime(), semaphore_));
+        events.insert_sorted(new changeSem(semaphore_.getNextOpenTime(), semaphore_));
     }
 }
 
@@ -100,7 +96,7 @@ carInSem::carInSem(int t, Semaphore& semaphore, Vehicle& vehicle) {
 	vehicle_ = vehicle;
 }
 
-LinkedList<Event> carInSem::run(LinkedList<Event> events) {
+LinkedList<Event*> carInSem::run(LinkedList<Event*> events) {
     float i = float((rand()/RAND_MAX));
     Road roadTo;
     if (i <= semaphore_.getProbLeft()) {
@@ -112,9 +108,9 @@ LinkedList<Event> carInSem::run(LinkedList<Event> events) {
     }
 
     if (semaphore_.isOpen()) {
-        events.insert_sorted(changeRoad(t_, semaphore_.getSource(), roadTo, vehicle_, semaphore_));
+        events.insert_sorted(new changeRoad(t_, semaphore_.getSource(), roadTo, vehicle_, semaphore_));
     } else {
-        events.insert_sorted(changeRoad(semaphore_.getNextOpenTime(), semaphore_.getSource(), roadTo, vehicle_, semaphore_));
+        events.insert_sorted(new changeRoad(semaphore_.getNextOpenTime(), semaphore_.getSource(), roadTo, vehicle_, semaphore_));
     }
 }
 
@@ -128,14 +124,14 @@ changeRoad::changeRoad(int t, Road& roadFrom, Road& roadTo, Vehicle& vehicle, Se
     semaphore_ = semaphore;
 }
 
-LinkedList<Event> changeRoad::run(LinkedList<Event> events) {
+LinkedList<Event*> changeRoad::run(LinkedList<Event*> events) {
     if (roadTo_.getAvailable() == 0) {
         changeRoad(t_+1, roadFrom_, roadTo_, vehicle_, semaphore_);
     } else {
         roadFrom_.pop();
         vehicle_.setSpeed(roadTo_.getSpeed());
         roadTo_.add(vehicle_);
-        events.insert_sorted(carInSem(t_, semaphore_, roadFrom_.getFirst()));
+        events.insert_sorted(new carInSem(t_, semaphore_, roadFrom_.getFirst()));
     }
 }
 

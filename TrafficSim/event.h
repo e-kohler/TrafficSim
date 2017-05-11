@@ -24,9 +24,9 @@ class Event {
 	Event(int t);
     bool operator<(const Event& e) const;
     bool operator>(const Event& e) const;
-    bool operator=(Event event);
+    bool operator=(const Event& e) const;
     int getTime();
-	virtual LinkedList<Event> run(LinkedList<Event> events) ;  // Method that performs the actual event.
+	virtual LinkedList<Event*> run(LinkedList<Event*> events)=0;  // Method that performs the actual event.
 };
 /**
  * @brief New vehicle is added to a specific road.
@@ -39,7 +39,7 @@ class newVehicle : public Event {
  public:
     newVehicle();
 	newVehicle(int t, wayIn &road, Semaphore& semaphore);
-    virtual LinkedList<Event> run(LinkedList<Event> events) override ;
+    virtual LinkedList<Event*> run(LinkedList<Event*> events) override ;
 };
 
 class carInLine : public Event {
@@ -50,7 +50,7 @@ private:
 public:
 	carInLine();
 	carInLine(int t, wayIn& road, Vehicle& vehicle, Semaphore& semaphore);
-	virtual LinkedList<Event> run(LinkedList<Event> events) ;
+	virtual LinkedList<Event*> run(LinkedList<Event*> events) override ;
 };
 
 
@@ -65,7 +65,7 @@ class changeSem : public Event {
  public:
     changeSem();
 	changeSem(int t, Semaphore& semaphore);
-	virtual LinkedList<Event> run(LinkedList<Event> events);
+	virtual LinkedList<Event*> run(LinkedList<Event*> events) override;
 };
 /**
  * @brief When a vehicle waits for a semaphore.
@@ -78,7 +78,7 @@ class carInSem : public Event {
  public:
     carInSem();
 	carInSem(int t, Semaphore& semaphore, Vehicle& vehicle);
-	LinkedList<Event> run(LinkedList<Event> events);
+	LinkedList<Event*> run(LinkedList<Event*> events) override;
 };
 /**
  * @brief When a vehicle moves to another road.
@@ -91,7 +91,7 @@ class changeRoad : public Event {
  public:
     changeRoad();
 	changeRoad(int t, Road& roadFrom, Road& roadTo, Vehicle& vehicle, Semaphore& semaphore);
-	LinkedList<Event> run(LinkedList<Event> events);
+	LinkedList<Event*> run(LinkedList<Event*> events) override;
 };
 
 #endif

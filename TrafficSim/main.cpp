@@ -35,19 +35,28 @@ int main () {
     Semaphore* N2 = new Semaphore(freq, 0.3, 0.4, *(N2sul), *(L1leste), *(C1oeste), *(S2sul));
 
 
-    LinkedList<Event> events;
-    events.push_back(*new newVehicle(0, *(O1leste), *O1));
-    events.push_back(*new newVehicle(0, *(S1norte), *S1));
-    events.push_back(*new newVehicle(0, *(N1sul), *N1));
-    events.push_back(*new newVehicle(0, *(L1oeste), *L1));
+    LinkedList<Event*> events;
+    events.push_back(new newVehicle(0, *(O1leste), *O1));
+    events.push_back(new newVehicle(0, *(S1norte), *S1));
+    events.push_back(new newVehicle(0, *(N1sul), *N1));
+    events.push_back(new newVehicle(0, *(L1oeste), *L1));
+
+    events.push_back(new newVehicle(0, *(O1leste), *O1));
+    events.push_back(new newVehicle(0, *(S1norte), *S1));
+    events.push_back(new newVehicle(0, *(N1sul), *N1));
+    events.push_back(new newVehicle(0, *(L1oeste), *L1));
+    events.push_back(new newVehicle(0, *(O1leste), *O1));
+    events.push_back(new newVehicle(0, *(S1norte), *S1));
+    events.push_back(new newVehicle(0, *(N1sul), *N1));
+    events.push_back(new newVehicle(0, *(L1oeste), *L1));
 
 
     while(elapsed < texec && !events.empty()) {
-        Event event= events.pop_front();
-        events = event.run(events);
+        Event* event= events.pop_front();
+        events = event->run(events);
 
         std::cout << "Começou evento:" << '\n';
-        elapsed = event.getTime();
+        elapsed = event->getTime();
         std::cout << "Tempo atual: " << elapsed << '\n';
 
         return 0;
