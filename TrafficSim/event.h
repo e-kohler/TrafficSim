@@ -25,6 +25,7 @@ class Event {
     bool operator<(const Event& e) const;
     bool operator>(const Event& e) const;
     bool operator=(Event event);
+    int getTime();
 	LinkedList<Event> run(LinkedList<Event> events);  // Method that performs the actual event.
 };
 /**

@@ -4,6 +4,7 @@
 
 int main () {
     int texec = 50;
+    int elapsed = 0;
 
     int freq = 20;
     wayIn* O1leste = new wayIn(2000, 80, "O1 leste",2, 10);
@@ -28,7 +29,6 @@ int main () {
     Semaphore* C1O = new Semaphore(freq, 0.4, 0.3, *(C1leste), *(N1norte), *(S1sul), *(O1oeste));
     Semaphore* N1 = new Semaphore(freq, 0.8, 0.1, *(N1sul), *(O1oeste), *(C1leste), *(S1sul));
 
-    Semaphore(int freq, float probLeft, float probRight, Road source, Road right, Road left, Road front);
     Semaphore* C1L = new Semaphore(freq, 0.3, 0.3, *(C1leste), *(S2sul), *(N2norte), *(L1leste));
     Semaphore* S2 = new Semaphore(freq, 0.3, 0.4, *(S2norte), *(C1oeste), *(L1leste), *(N2norte));
     Semaphore* L1 = new Semaphore(freq, 0.3, 0.4, *(L1oeste), *(N2norte), *(S2sul), *(C1oeste));
@@ -43,7 +43,8 @@ int main () {
 
 
     while(elapsed < texec) {
-        
+        events = events.pop_front().run(events);
+
     }
 
 }

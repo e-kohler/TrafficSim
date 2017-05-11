@@ -19,6 +19,10 @@ bool Event::operator=(Event event) {
     return t_ == event.t_;
 }
 
+int Event::getTime() {
+    return t_;
+}
+
 LinkedList<Event>  Event::run(LinkedList<Event> events) {
     throw ("Não deve ser usado.");
 }
@@ -110,7 +114,7 @@ LinkedList<Event> carInSem::run(LinkedList<Event> events) {
     if (semaphore_.isOpen()) {
         events.insert_sorted(changeRoad(t_, semaphore_.getSource(), roadTo, vehicle_, semaphore_));
     } else {
-        events.insert_sorted(changeRoad(semaphore_.getNextOpenTime(), semaphore_.getSource(), roadTo, vehicle_, semaphore_);
+        events.insert_sorted(changeRoad(semaphore_.getNextOpenTime(), semaphore_.getSource(), roadTo, vehicle_, semaphore_));
     }
 }
 
