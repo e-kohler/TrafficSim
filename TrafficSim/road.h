@@ -44,12 +44,12 @@ class wayIn : public Road {
 
 class wayOut : public Road {
  public:
-	explicit wayOut(int size, int speed);
+	explicit wayOut(int size, int speed, std::string name);
 };
 
 class middleRoad : public Road {
  public:
- 	middleRoad(int size, int speed);
+ 	middleRoad(int size, int speed, std::string name);
 };
 
 #endif

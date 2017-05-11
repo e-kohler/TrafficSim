@@ -67,14 +67,16 @@ int wayIn::getFreq() {
     return (int)(((rand()/RAND_MAX) * ((max_ - min_)+1)) + min_);
 }
 
-wayOut::wayOut(int size, int speed) {
+wayOut::wayOut(int size, int speed, std::string name) {
     size_ = size;
     speed_ = speed;
+    name_ = name;
 }
 
-middleRoad::middleRoad(int size, int speed) {
+middleRoad::middleRoad(int size, int speed, std::string name) {
     size_ = size;
     speed_ = speed;
+    name_ = name;
 }
 
 
