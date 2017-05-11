@@ -42,9 +42,18 @@ int main () {
     events.push_back(*new newVehicle(0, *(L1oeste), *L1));
 
 
-    while(elapsed < texec) {
-        events = events.pop_front().run(events);
+    while(elapsed < texec && !events.empty()) {
+        Event event= events.pop_front();
+        events = event.run(events);
+
+        std::cout << "Começou evento:" << '\n';
+        elapsed = event.getTime();
+        std::cout << "Tempo atual: " << elapsed << '\n';
+
+        auto newEvent = event.run(events);
+
+        return 0;
 
     }
-
+    return 2;
 }
