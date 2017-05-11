@@ -7,6 +7,7 @@ int main () {
     int elapsed = 0;
 
     int freq = 20;
+
     wayIn* O1leste = new wayIn(2000, 80, "O1 leste",2, 10);
     wayIn* S1norte = new wayIn(500, 60, "S1 norte",7, 30);
     wayIn* N1sul = new wayIn(500, 60, "N1 sul",5, 20);
@@ -41,14 +42,14 @@ int main () {
     events.push_back(new newVehicle(0, *(N1sul), *N1));
     events.push_back(new newVehicle(0, *(L1oeste), *L1));
 
-    events.push_back(new newVehicle(0, *(O1leste), *O1));
-    events.push_back(new newVehicle(0, *(S1norte), *S1));
-    events.push_back(new newVehicle(0, *(N1sul), *N1));
-    events.push_back(new newVehicle(0, *(L1oeste), *L1));
-    events.push_back(new newVehicle(0, *(O1leste), *O1));
-    events.push_back(new newVehicle(0, *(S1norte), *S1));
-    events.push_back(new newVehicle(0, *(N1sul), *N1));
-    events.push_back(new newVehicle(0, *(L1oeste), *L1));
+    events.push_back(new changeSem(0, *O1));
+    events.push_back(new changeSem(0, *C1L));
+    events.push_back(new changeSem(15, *N2));
+    events.push_back(new changeSem(15, *N1));
+    events.push_back(new changeSem(30, *C1O));
+    events.push_back(new changeSem(30, *L1));
+    events.push_back(new changeSem(45, *S2));
+    events.push_back(new changeSem(45, *S1));
 
 
     while(elapsed < texec && !events.empty()) {
