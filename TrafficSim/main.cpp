@@ -3,7 +3,7 @@
 
 
 int main () {
-    int texec = 50;
+    int texec = 5000;
     int elapsed = 0;
 
     int freq = 20;
@@ -49,8 +49,6 @@ int main () {
         std::cout << "Começou evento:" << '\n';
         elapsed = event.getTime();
         std::cout << "Tempo atual: " << elapsed << '\n';
-
-        auto newEvent = event.run(events);
 
         return 0;
 

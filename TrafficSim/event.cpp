@@ -24,7 +24,7 @@ int Event::getTime() {
 }
 
 LinkedList<Event>  Event::run(LinkedList<Event> events) {
-    throw ("Não deve ser usado.");
+
 }
 
 newVehicle::newVehicle() = default;

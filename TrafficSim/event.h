@@ -26,7 +26,7 @@ class Event {
     bool operator>(const Event& e) const;
     bool operator=(Event event);
     int getTime();
-	LinkedList<Event> run(LinkedList<Event> events);  // Method that performs the actual event.
+	virtual LinkedList<Event> run(LinkedList<Event> events) ;  // Method that performs the actual event.
 };
 /**
  * @brief New vehicle is added to a specific road.
@@ -39,7 +39,7 @@ class newVehicle : public Event {
  public:
     newVehicle();
 	newVehicle(int t, wayIn &road, Semaphore& semaphore);
-    LinkedList<Event> run(LinkedList<Event> events);
+    virtual LinkedList<Event> run(LinkedList<Event> events) override ;
 };
 
 class carInLine : public Event {
@@ -50,7 +50,7 @@ private:
 public:
 	carInLine();
 	carInLine(int t, wayIn& road, Vehicle& vehicle, Semaphore& semaphore);
-	LinkedList<Event> run(LinkedList<Event> events);
+	virtual LinkedList<Event> run(LinkedList<Event> events) ;
 };
 
 
@@ -65,7 +65,7 @@ class changeSem : public Event {
  public:
     changeSem();
 	changeSem(int t, Semaphore& semaphore);
-	LinkedList<Event> run(LinkedList<Event> events);
+	virtual LinkedList<Event> run(LinkedList<Event> events);
 };
 /**
  * @brief When a vehicle waits for a semaphore.
