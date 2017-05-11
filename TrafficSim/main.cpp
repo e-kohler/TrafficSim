@@ -3,6 +3,8 @@
 
 
 int main () {
+    int texec = 50;
+
     int freq = 20;
     wayIn* O1leste = new wayIn(2000, 80, "O1 leste",2, 10);
     wayIn* S1norte = new wayIn(500, 60, "S1 norte",7, 30);
@@ -26,15 +28,22 @@ int main () {
     Semaphore* C1O = new Semaphore(freq, 0.4, 0.3, *(C1leste), *(N1norte), *(S1sul), *(O1oeste));
     Semaphore* N1 = new Semaphore(freq, 0.8, 0.1, *(N1sul), *(O1oeste), *(C1leste), *(S1sul));
 
+    Semaphore(int freq, float probLeft, float probRight, Road source, Road right, Road left, Road front);
     Semaphore* C1L = new Semaphore(freq, 0.3, 0.3, *(C1leste), *(S2sul), *(N2norte), *(L1leste));
-    Semaphore* S2 = new Semaphore(freq, 0.4, 0.3, *(S2norte), *(C1oeste), *(L1leste), *(N2norte));
-    Semaphore* L1 = new Semaphore(freq, 0.4, 0.3, *(L1oeste), *(N2norte), *(S2sul), *(C1oeste));
-    Semaphore* N2 = new Semaphore(freq, 0.4, 0.3, *(N2sul), *(L1leste), *(C1oeste), *(S2sul));
+    Semaphore* S2 = new Semaphore(freq, 0.3, 0.4, *(S2norte), *(C1oeste), *(L1leste), *(N2norte));
+    Semaphore* L1 = new Semaphore(freq, 0.3, 0.4, *(L1oeste), *(N2norte), *(S2sul), *(C1oeste));
+    Semaphore* N2 = new Semaphore(freq, 0.3, 0.4, *(N2sul), *(L1leste), *(C1oeste), *(S2sul));
 
 
     LinkedList<Event> events;
-    events.push_back(*new newVehicle(0, *(O1leste), ));
-    events.push_back(*new newVehicle(0, *(S1norte)));
-    events.push_back(*new newVehicle(0, *(N1sul)));
-    events.push_back(*new newVehicle(0, *(L1oeste)));
+    events.push_back(*new newVehicle(0, *(O1leste), *O1));
+    events.push_back(*new newVehicle(0, *(S1norte), *S1));
+    events.push_back(*new newVehicle(0, *(N1sul), *N1));
+    events.push_back(*new newVehicle(0, *(L1oeste), *L1));
+
+
+    while(elapsed < texec) {
+        
+    }
+
 }
